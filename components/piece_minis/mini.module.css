@@ -1,0 +1,38 @@
+.container {
+    background-color: black;
+    width: 128px;
+    height: 212px;
+    padding: 16px 6px 0px 6px ;
+}
+
+.pieceName {
+    font-size: 10px;
+    color: white;
+    padding-top: 2px;
+}
+
+.artist {
+    font-size: 10px;
+    color: grey;
+    padding-top: 2px;
+}
+
+.distance {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 10px;
+    align-items: center;
+    color: #42FF60;
+    padding-top: 2px;
+}
+
+.distance img {
+    width: 10px;
+    height: 10px;
+}
+
+.distance p {
+    margin: 0px;
+    padding-left: 3px;
+}

@@ -1,0 +1,12 @@
+.click {
+    background-color: white;
+    width: 136px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    border-radius: 20px;
+    margin-top: 51px;
+}

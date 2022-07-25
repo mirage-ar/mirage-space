@@ -1,0 +1,63 @@
+.container {
+    background-color: black;
+    width: 428px;
+    height: 274px;
+    margin: -1px;
+}
+
+.title {
+    color: grey;
+    font-size: 10px;
+    width: 428px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title p {
+    padding-left: 16px;
+}
+
+.artistStatement {
+    color: white;
+    font-size: 13px;
+    width: 428px;
+    height: 100px
+}
+
+.artistStatement p {
+    padding: 0px 16px 16px 16px;
+    margin: 0px;
+}
+
+.cta {
+    color: #42FF60;
+    font-size: 13px;
+    width: 428px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: white;
+    width: 396px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 13px;
+}

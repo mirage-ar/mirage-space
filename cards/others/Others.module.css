@@ -1,0 +1,26 @@
+.container {
+    background-color: black;
+    width: 428px;
+    height: 317px;
+    margin: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    border-bottom: var(--line);
+    color: white;
+    font-size: 10px;
+    width: 400px;
+    padding: 0px 0px 10px 0px;
+}
+
+.miniViews {
+    width: 428px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
