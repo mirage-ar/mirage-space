@@ -27,7 +27,7 @@ import Connected from "../components/connected/Connected"
 
 
 const { chains, provider } = configureChains(
-  [chain.mainnet],
+  [chain.mainnet, chain.rinkeby, chain.goerli],
   [
     alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }),
     publicProvider()

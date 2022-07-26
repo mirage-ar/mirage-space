@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Modal.module.css";
+import Address from "../utilities/Address"
 
 interface ModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           <div className={styles.modalTitle}>MINT</div>
           <div className={styles.connected}>
             <img src="/images/live.svg" />
-            <p>CONNECTED AS 0X69...420</p>
+            <p>CONNECTED AS <Address/></p>
             <button className={styles.modalClose} onClick={onClose}>
               <img src={"/images/close.svg"} alt={"close modal"} />
             </button>

@@ -1,20 +1,27 @@
 .container {
-    width: 226px;
-    height: 32px;
-    background-color: black;
-    font-size: 11px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px 10px 20px;
-    border-radius: 30px;
+  width: 226px;
+  height: 32px;
+  background-color: black;
+  font-size: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  font-family: Helvetica-Monospaced, monospaced;
 }
 
 .connectedAs {
-    color: white;
+  color: white;
 }
 
 .address {
-    color: #42FF60;
+  color: #42ff60;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.stack {
+  width: 16px;
 }
