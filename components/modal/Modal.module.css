@@ -22,7 +22,7 @@
   .modalBox {
     position: relative;
     width: 396px;
-    height: 240px;
+    height: 328px;
     margin: 0 10%;
     box-sizing: border-box;
     background-color: white;
@@ -36,6 +36,7 @@
     justify-content: space-between;
     padding: 10px;
     width: 396px;
+    height: 41px;
     border-bottom: 1px;
     border-top: 0px;
     border-right: 0px;
@@ -84,4 +85,37 @@
     border: 1.5px solid #222222;
     font-size: 13px;
     background-color: white;
+  }
+
+  .connected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modalClose img {
+    width: 14px;
+  }
+
+  .connected p {
+    padding-left: 4px;
+    padding-bottom: 3px;
+  }
+
+  .ctaText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .ctaText p {
+    margin: 0px;
+  }
+
+  .ctaTitle {
+    padding-bottom: 10px;
+    font-size: 20px;
   }
