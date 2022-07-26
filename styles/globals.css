@@ -19,3 +19,27 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Redaction-Regular";
+  src: url("/fonts/Redaction/Redaction35-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Extended";
+  src: url("/fonts/Helvetica/HelveticaNeue-Extended.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ENGIN";
+  src: url("/fonts/ENGIN/ENGIN.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
