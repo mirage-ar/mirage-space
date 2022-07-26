@@ -1,7 +1,11 @@
 import React from "react";
 import styles from"./Description.module.css"
 
-const Description: React.FC = () => {
+interface DescriptionProps {
+    toggleModal: () => void;
+}
+
+const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -16,7 +20,7 @@ const Description: React.FC = () => {
                 Connect Wallet to mint
             </div>
             <div className={styles.buttonContainer}>
-                <button className={styles.button}>
+                <button className={styles.button} onClick={toggleModal}>
                     CONNECT WALLET
                 </button>
             </div>
