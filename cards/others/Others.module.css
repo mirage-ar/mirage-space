@@ -1,26 +1,53 @@
 .container {
-    background-color: black;
-    width: 428px;
-    height: 317px;
-    margin: -1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: black;
+  width: 428px;
+  height: 317px;
+  margin: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-    border-bottom: var(--line);
-    color: white;
-    font-size: 10px;
-    width: 400px;
-    padding: 0px 0px 10px 0px;
+  border-bottom: var(--line);
+  color: white;
+  font-size: 10px;
+  width: 400px;
+  padding: 0px 0px 10px 0px;
 }
 
 .miniViews {
-    width: 428px;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 400px;
+  height: 317px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.desktopContainer {
+  width: 1408px;
+  height: 600px;
+  padding: 45px;
+  background-color: black;
+}
+
+.desktopTitle {
+  border-bottom: var(--line);
+  color: white;
+  font-size: 10px;
+  width: 1300px;
+  padding: 0px 0px 10px 0px;
+}
+
+.desktopMiniViews {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  white-space: nowrap;
+  width: 1300px;
+  height: 600px;
 }

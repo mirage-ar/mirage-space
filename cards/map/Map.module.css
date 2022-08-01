@@ -8,6 +8,16 @@
     margin: -1px;
 }
 
+.desktopContainer {
+    background-image: url('/images/map.svg');
+    width: 400px;
+    height: 224px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
 .location {
     display: flex;
     flex-direction: row;

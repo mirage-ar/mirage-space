@@ -1,15 +1,12 @@
 import React from "react";
 import styles from "./Connected.module.css";
-import Address from "../utilities/Address";
 
 const Connected: React.FC = () => {
   return (
     <div className={styles.container}>
       <p className={styles.connectedAs}>CONNECTED AS</p>
-      <p className={styles.address}>
-        <Address />
-      </p>
-      <img className={styles.stack} src="/images/stack.svg" />
+      <p className={styles.address}> 0X69...420T </p>
+      <img className={styles.stack} alt="copy" src="/images/stack.svg" />
     </div>
   );
 };

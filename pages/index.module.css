@@ -1,6 +1,37 @@
-.container {
+.mobileContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.desktopContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 1408px;
+    height: 82px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.titleText {
+    color: white;
+    font-size: 13px;
+    font-family: "helvetica-Monospaced";
+}
+
+.connected {
+    padding-left: 672px;
+}
+
+.titleImage {
+    padding-right: 16.64px;
+    width: 88px;
+    height: 44px;
 }
