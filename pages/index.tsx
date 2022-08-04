@@ -22,6 +22,8 @@ import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectedUser from "../components/user/ConnectedUser";
 
+import NoSSR from "../components/utilities/NoSSR";
+
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.rinkeby, chain.goerli],
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
@@ -56,31 +58,33 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
           fontStack: "system",
         })}
       >
-        {isMobileView ? (
-          <div className={styles.mobileContainer}>
-            <Modal isOpen={isModalOpen} onClose={toggleModal} />
-            <Button toggleModal={toggleModal} />
-            <Connect />
-            <Display />
-            <Map isMobileView={isMobileView} />
-            <Description />
-            <Others isMobileView={isMobileView} />
-          </div>
-        ) : (
-          <div className={styles.desktopContainer}>
-            <div className={styles.title}>
-              <img src="/images/m.svg" className={styles.titleImage} />
-              <p className={styles.titleText}>
-                DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
-              </p>
-              <div className={styles.connected}>
-                <ConnectedUser />
-              </div>
+        <NoSSR>
+          {isMobileView ? (
+            <div className={styles.mobileContainer}>
+              <Modal isOpen={isModalOpen} onClose={toggleModal} />
+              <Button toggleModal={toggleModal} />
+              <Connect />
+              <Display />
+              <Map isMobileView={isMobileView} />
+              <Description />
+              <Others isMobileView={isMobileView} />
             </div>
-            <DesktopDisplay />
-            <Others isMobileView={isMobileView} />
-          </div>
-        )}
+          ) : (
+            <div className={styles.desktopContainer}>
+              <div className={styles.title}>
+                <img src="/images/m.svg" className={styles.titleImage} />
+                <p className={styles.titleText}>
+                  DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+                </p>
+                <div className={styles.connected}>
+                  <ConnectedUser />
+                </div>
+              </div>
+              <DesktopDisplay />
+              <Others isMobileView={isMobileView} />
+            </div>
+          )}
+        </NoSSR>
       </RainbowKitProvider>
     </WagmiConfig>
   );

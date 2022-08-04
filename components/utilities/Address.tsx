@@ -13,7 +13,7 @@ const formatAddress = (address: string) => {
 const Address: React.FC = () => {
   const { address, isConnected } = useAccount();
 
-  return isConnected ? <p>{formatAddress(address)}</p> : <p>0X00...1111</p>;
+  return isConnected ? <>{formatAddress(address)}</> : <>0X00...1111</>;
 };
 
 export default Address;
