@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
+import { useApplicationContext } from "../../context/state";
 import styles from "./Map.module.css";
 
-interface MapProps {
-  isMobileView?: boolean;
-}
-
-const Map: React.FC<MapProps> = ({ isMobileView }) => {
+const Map: React.FC = () => {
+  const { isMobileView } = useApplicationContext();
   return (
     <>
       {isMobileView ? (

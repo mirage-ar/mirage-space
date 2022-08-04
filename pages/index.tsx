@@ -1,34 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NextPage } from "next";
 import styles from "./index.module.css";
 import Description from "../cards/description/Description";
 import Display from "../cards/display/mobile/Display";
 import Map from "../cards/map/Map";
-import Others from "../cards/others/Others";
+import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectButton from "../components/buttons/ConnectButton";
 import NoSSR from "../components/utilities/NoSSR";
+
+import { useApplicationContext } from "../context/state";
 
 interface Props {
   isMobileView?: boolean;
 }
 
 const Home: NextPage<Props> = ({ isMobileView }) => {
-  const [isModalOpen, setModalState] = React.useState(false);
+  const { isModalOpen, toggleModal, setMobileView } = useApplicationContext();
 
-  const toggleModal = () => setModalState(!isModalOpen);
+  useEffect(() => {
+    setMobileView(isMobileView);
+  }, [isMobileView]);
 
   return (
     <NoSSR>
       {isMobileView ? (
         <div className={styles.mobileContainer}>
           <Modal isOpen={isModalOpen} onClose={toggleModal} />
-          <ConnectButton toggleModal={toggleModal} />
+          <ConnectButton />
           <Display />
-          <Map isMobileView={isMobileView} />
-          <Description toggleModal={toggleModal} />
-          <Others isMobileView={isMobileView} />
+          <Map />
+          <Description />
+          <OtherItems />
         </div>
       ) : (
         <div className={styles.desktopContainer}>
@@ -39,11 +43,11 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
               DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
             </p>
             <div className={styles.connected}>
-              <ConnectButton toggleModal={toggleModal} />
+              <ConnectButton />
             </div>
           </div>
-          <DesktopDisplay toggleModal={toggleModal} />
-          <Others isMobileView={isMobileView} />
+          <DesktopDisplay />
+          <OtherItems />
         </div>
       )}
     </NoSSR>

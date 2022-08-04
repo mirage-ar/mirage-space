@@ -1,5 +1,6 @@
 import React from "react";
 import { useAccount } from "wagmi";
+import { useApplicationContext } from "../../context/state";
 import styles from "./ConnectButton.module.css";
 
 const formatAddress = (address: string) => {
@@ -10,12 +11,10 @@ const formatAddress = (address: string) => {
   )}`.toUpperCase();
 };
 
-interface ConnectButtonProps {
-  toggleModal: () => void;
-}
 
-const ConnectButton: React.FC<ConnectButtonProps> = ({ toggleModal }) => {
+const ConnectButton: React.FC = () => {
   const { address, isConnected } = useAccount();
+  const { toggleModal } = useApplicationContext();
 
   return (
     <div>

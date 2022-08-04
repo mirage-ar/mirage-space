@@ -4,6 +4,8 @@ import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
+import { ApplicationProvider } from "../context/state";
+
 import "../styles/globals.css";
 
 const { chains, provider } = configureChains(
@@ -28,7 +30,9 @@ const client = createClient({
 function Mirage({ Component, pageProps }) {
   return (
     <WagmiConfig client={client}>
-      <Component {...pageProps} />
+      <ApplicationProvider>
+        <Component {...pageProps} />
+      </ApplicationProvider>
     </WagmiConfig>
   );
 }

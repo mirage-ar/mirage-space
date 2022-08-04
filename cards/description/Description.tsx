@@ -3,11 +3,7 @@ import styles from "./Description.module.css";
 
 import ConnectButton from "../../components/buttons/ConnectButton";
 
-interface DescriptionProps {
-  toggleModal: () => void;
-}
-
-const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
+const Description: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -22,7 +18,7 @@ const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
       </div>
       <div className={styles.cta}>Connect Wallet to mint</div>
       <div className={styles.buttonContainer}>
-        <ConnectButton toggleModal={toggleModal} />
+        <ConnectButton />
       </div>
     </div>
   );
