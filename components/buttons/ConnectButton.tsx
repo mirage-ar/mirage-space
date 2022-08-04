@@ -20,7 +20,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({ toggleModal }) => {
   const address = "0XA348105B031BC94Cd701104Eec382976b6b8242C";
 
   return (
-    <div suppressHydrationWarning>
+    <div>
       {isConnected ? (
         <div className={styles.connectedContainer}>
           <p className={styles.connectedAs}>CONNECTED AS</p>
