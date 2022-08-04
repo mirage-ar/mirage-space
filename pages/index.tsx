@@ -22,7 +22,6 @@ import ConnectedUser from "../components/user/ConnectedUser";
 import ConnectButton from "../components/buttons/ConnectButton";
 
 import NoSSR from "../components/utilities/NoSSR";
-import WalletConnect from "../components/buttons/WalletConnect";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.rinkeby, chain.goerli],
