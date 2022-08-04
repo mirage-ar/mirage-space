@@ -1,121 +1,121 @@
 .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .modalOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .6);
-    cursor: pointer;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
 
-  .modalBox {
-    position: relative;
-    width: 396px;
-    height: 328px;
-    margin: 0 10%;
-    box-sizing: border-box;
-    background-color: white;
-    cursor: auto;
-  }
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
 
-  .modalTopbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    width: 396px;
-    height: 41px;
-    border-bottom: 1px;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-color: rgba( 236,236,236);
-    border-style: solid;
-    font-size: 10px;
-  }
+.modalBox {
+  position: relative;
+  width: 396px;
+  height: 328px;
+  margin: 0 10%;
+  box-sizing: border-box;
+  background-color: white;
+  cursor: auto;
+}
 
-  .modalClose {
-    border: none;
-    background-color: white;
-  }
+.modalTopbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 396px;
+  height: 41px;
+  border-bottom: 1px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-color: rgba(236, 236, 236);
+  border-style: solid;
+  font-size: 10px;
+}
 
-  .modalContent {
-    height: 180px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
+.modalClose {
+  border: none;
+  background-color: white;
+}
 
-  .connect {
-    height: 45px;
-    width: 179px;   
-    border: none;
-    color: white;
-    background-color: #222222;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-  }
+.modalContent {
+  height: 180px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 
-  .connectIcon {
-    padding-left: 10px;
-  }
+.connect {
+  height: 45px;
+  width: 179px;
+  border: none;
+  color: white;
+  background-color: #222222;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
 
-  .info {
-    width: 179px;
-    height: 45px;
-    border-radius: 60px;
-    border: 1.5px solid #222222;
-    font-size: 13px;
-    background-color: white;
-  }
+.connectIcon {
+  padding-left: 10px;
+}
 
-  .connected {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+.info {
+  width: 179px;
+  height: 45px;
+  border-radius: 60px;
+  border: 1.5px solid #222222;
+  font-size: 13px;
+  background-color: white;
+}
 
-  .modalClose img {
-    width: 14px;
-  }
+.connected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
-  .connected p {
-    padding-left: 4px;
-    padding-bottom: 3px;
-  }
+.modalClose img {
+  width: 14px;
+}
 
-  .ctaText {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    font-size: 13px;
-  }
+.connected p {
+  padding-left: 4px;
+  padding-bottom: 3px;
+}
 
-  .ctaText p {
-    margin: 0px;
-  }
+.ctaText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 13px;
+}
 
-  .ctaTitle {
-    padding-bottom: 10px;
-    font-size: 20px;
-  }
+.ctaText p {
+  margin: 0px;
+}
+
+.ctaTitle {
+  padding-bottom: 10px;
+  font-size: 20px;
+}

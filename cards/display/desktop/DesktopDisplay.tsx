@@ -34,14 +34,17 @@ const DesktopDisplay: React.FC = () => {
       </div>
       <div className={styles.rightContent}>
         <div className={styles.piece}>
-            <img src="/images/golden_queen.png" className={styles.piecePlacement}/>
+          <img
+            src="/images/golden_queen.png"
+            className={styles.piecePlacement}
+          />
         </div>
         <div className={styles.pieceInfo}>
-            <p>DROP</p>
-            <img src="/images/drop.svg" className={styles.dropImage}/>
-            <img src="/images/360.svg" className={styles.rotation}/>
+          <p>DROP</p>
+          <img src="/images/drop.svg" className={styles.dropImage} />
+          <img src="/images/360.svg" className={styles.rotation} />
         </div>
-    </div>
+      </div>
     </div>
   );
 };

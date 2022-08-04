@@ -1,83 +1,82 @@
 .container {
-    background-color: black;
-    width: 1408px;
-    height: 900px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  background-color: black;
+  width: 1408px;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .leftContent {
-    width: 400px;
-    height: 815px;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 400px;
+  height: 815px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 .displayTitle {
-    padding-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 .info {
-    color: white;
-    font-size: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-top: var(--line);
-    width: 400px;
-    height: 39px;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--line);
+  width: 400px;
+  height: 39px;
 }
 
 .leftText {
-    color: grey;
+  color: grey;
 }
 
 .rightContent {
-    margin-left: 100px;
-    width: 815px;
-    height: 815px;
-    background-image: url("/images/desktopDisplayBackground.svg");
-    display: flex;
-    flex-direction: row;
+  margin-left: 100px;
+  width: 815px;
+  height: 815px;
+  background-image: url("/images/desktopDisplayBackground.svg");
+  display: flex;
+  flex-direction: row;
 }
 
 .piece {
-    width: 712px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 103px;
-    padding-top: 45px;
+  width: 712px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 103px;
+  padding-top: 45px;
 }
 
 .pieceInfo {
-    width: 103px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pieceInfo p {
-    color: white;
-    font-size: 10px;
+  color: white;
+  font-size: 10px;
 }
 
 .dropImage {
-    width: 103px;
+  width: 103px;
 }
 
 .rotation {
-    padding-top: 300px;
-    width: 24px;
+  padding-top: 300px;
+  width: 24px;
 }
 
 .piecePlacement {
-    width: 450px;
+  width: 450px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Connected.module.css";
+import styles from "./ConnectedUser.module.css";
 
-const Connected: React.FC = () => {
+const ConnectedUser: React.FC = () => {
   return (
     <div className={styles.container}>
       <p className={styles.connectedAs}>CONNECTED AS</p>
@@ -11,4 +11,4 @@ const Connected: React.FC = () => {
   );
 };
 
-export default Connected;
+export default ConnectedUser;

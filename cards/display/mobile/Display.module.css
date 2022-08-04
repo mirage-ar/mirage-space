@@ -1,125 +1,125 @@
 .container {
-    background-color: black;
-    width: 428px;
-    height: 598px;
-    display: flex;
-    flex-direction: column;
-    margin: -1px;
-    margin-top: 16px;
+  background-color: black;
+  width: 428px;
+  height: 598px;
+  display: flex;
+  flex-direction: column;
+  margin: -1px;
+  margin-top: 16px;
 }
 
 .piece {
-    width: 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0px 0px 80px;
-    /* border-right-color: grey ;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px 0px 80px;
+  /* border-right-color: grey ;
     border-right-width: 1px;
     border-right-style: solid; */
 }
 
-.piece img{
-    width: 268px;
-    height: 366px;
+.piece img {
+  width: 268px;
+  height: 366px;
 }
 
 .drop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 88px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88px;
 }
 
 .drop img {
-    width: 61px;
-    height: 176px;
+  width: 61px;
+  height: 176px;
 }
 
 .drop p {
-color: white;
-padding: 12px 16px 12px 16px;
-margin: 0px 0px 0px 0px;
-font-size: 10px;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  margin: 0px 0px 0px 0px;
+  font-size: 10px;
 }
 
 .topHalf {
-    display: flex;
-    flex-direction: row;
-    width: 428px;
-    height: 450px;
+  display: flex;
+  flex-direction: row;
+  width: 428px;
+  height: 450px;
 }
 
-.bottomHalf{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+.bottomHalf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
 .name {
-    border-bottom: var(--line);
-    width: 396px;
-    height: 38px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
+  border-bottom: var(--line);
+  width: 396px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .price {
-    border-bottom: var(--line);
-    width: 396px;
-    height: 38px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
+  border-bottom: var(--line);
+  width: 396px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .timer {
-    border-bottom: var(--line);
-    width: 396px;
-    height: 38px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
+  border-bottom: var(--line);
+  width: 396px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .address {
-    width: 396px;
-    height: 38px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
+  width: 396px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .priceTitle {
-    color: grey;
+  color: grey;
 }
 
 .timerTitle {
-    color: grey;
+  color: grey;
 }
 
 .addressTitle {
-    color: grey;
+  color: grey;
 }
 
 .addressLink {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .addressLink img {
-    width: 16px;
-    height: 16px;
-    padding-left: 2px;
+  width: 16px;
+  height: 16px;
+  padding-left: 2px;
 }

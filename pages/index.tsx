@@ -20,7 +20,7 @@ import Connect from "../components/buttons/connect/Connect";
 import Button from "../components/buttons/button";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
-import Connected from "../components/connected/Connected";
+import ConnectedUser from "../components/user/ConnectedUser";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.rinkeby, chain.goerli],
@@ -62,21 +62,23 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
             <Button toggleModal={toggleModal} />
             <Connect />
             <Display />
-            <Map isMobileView={isMobileView}/>
+            <Map isMobileView={isMobileView} />
             <Description />
-            <Others isMobileView={isMobileView}/>
+            <Others isMobileView={isMobileView} />
           </div>
         ) : (
           <div className={styles.desktopContainer}>
             <div className={styles.title}>
-              <img src="/images/m.svg" className={styles.titleImage}/>
-              <p className={styles.titleText}>DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE</p>
+              <img src="/images/m.svg" className={styles.titleImage} />
+              <p className={styles.titleText}>
+                DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+              </p>
               <div className={styles.connected}>
-                <Connected />
+                <ConnectedUser />
               </div>
             </div>
             <DesktopDisplay />
-            <Others isMobileView={isMobileView}/>
+            <Others isMobileView={isMobileView} />
           </div>
         )}
       </RainbowKitProvider>

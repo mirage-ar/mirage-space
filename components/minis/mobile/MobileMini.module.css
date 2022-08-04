@@ -1,0 +1,56 @@
+.container {
+  background-color: black;
+  width: 128px;
+  min-width: 128px;
+  height: 206px;
+  padding: 15px 5px 0px 0px;
+}
+
+.background {
+  height: 160px;
+  background-image: url("/images/pieceMiniBackgroundMoblie.svg");
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.background img {
+  height: 118px;
+}
+
+.pieceInfo {
+  height: 46px;
+}
+
+.pieceName {
+  font-size: 10px;
+  color: white;
+  padding-top: 2px;
+}
+
+.artist {
+  font-size: 10px;
+  color: grey;
+  padding-top: 2px;
+}
+
+.distance {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 10px;
+  align-items: center;
+  color: #42ff60;
+  padding-top: 2px;
+}
+
+.distance img {
+  width: 10px;
+  height: 10px;
+}
+
+.distance p {
+  margin: 0px;
+  padding-left: 3px;
+}
