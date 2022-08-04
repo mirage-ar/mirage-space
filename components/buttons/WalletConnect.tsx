@@ -1,4 +1,5 @@
 import React from "react";
+import { useAccount } from "wagmi";
 import styles from "./WalletConnect.module.css";
 
 const formatAddress = (address: string) => {
@@ -14,13 +15,10 @@ interface WalletConnectProps {
 }
 
 const WalletConnect: React.FC<WalletConnectProps> = ({ toggleModal }) => {
-  // const { address, isConnected } = useAccount();
-
-  const isConnected = false;
-  const address = "0XA348105B031BC94Cd701104Eec382976b6b8242C";
+  const { address, isConnected } = useAccount();
 
   return (
-    <div suppressHydrationWarning>
+    <div>
       {isConnected ? (
         <div className={styles.connectedContainer}>
           <p className={styles.connectedAs}>CONNECTED AS</p>

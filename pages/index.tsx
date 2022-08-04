@@ -23,6 +23,7 @@ import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectedUser from "../components/user/ConnectedUser";
 
 import NoSSR from "../components/utilities/NoSSR";
+import WalletConnect from "../components/buttons/WalletConnect";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.rinkeby, chain.goerli],
@@ -62,8 +63,9 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
-              <Button toggleModal={toggleModal} />
-              <Connect />
+              {/* <Button toggleModal={toggleModal} /> */}
+              {/* <Connect /> */}
+              <WalletConnect toggleModal={toggleModal} />
               <Display />
               <Map isMobileView={isMobileView} />
               <Description />
