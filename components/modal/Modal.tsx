@@ -2,7 +2,9 @@ import React from "react";
 import { useAccount } from "wagmi";
 import styles from "./Modal.module.css";
 import Address from "../utilities/Address";
-import ConnectFlow from "../../flows/connect/connectFLow";
+import ConnectFlow from "../../flows/connect/ConnectFlow";
+import MintFlow from "../../flows/mint/MintFlow";
+import Successful from "../successful/Successful";
 
 interface ModalProps {
   isOpen: boolean;
@@ -32,27 +34,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           />
           <div className={styles.modalBox}>
             <div className={styles.modalTopbar}>
-              <div className={styles.modalTitle}>MINT</div>
+              <div className={styles.modalTitle}>CONNECT WALLET</div>
               <div className={styles.connected}>
-                <img src="/images/live.svg" />
-                <p>
-                  CONNECTED AS <Address />
-                </p>
                 <button className={styles.modalClose} onClick={onClose}>
                   <img src={"/images/close.svg"} alt={"close modal"} />
                 </button>
               </div>
             </div>
-            <div className={styles.ctaText}>
-              <p className={styles.ctaTitle}>Success!</p>
-              <p>Thank you for minting, poydo, eth.</p>
-              <p>Now you can view your piece on:</p>
-            </div>
-            <div className={styles.modalContent}>
-              <button className={styles.connect}> MIRAGE APP </button>
-              <button className={styles.connect}> OPENSEA </button>
-              <button className={styles.info}> ETHERSCAN </button>
-            </div>
+            <Successful />
           </div>
         </div>
       ) : (

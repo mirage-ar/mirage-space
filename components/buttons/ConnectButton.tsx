@@ -1,4 +1,5 @@
 import React from "react";
+import { useAccount } from "wagmi";
 import styles from "./ConnectButton.module.css";
 
 const formatAddress = (address: string) => {
@@ -14,10 +15,7 @@ interface ConnectButtonProps {
 }
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({ toggleModal }) => {
-  // const { address, isConnected } = useAccount();
-
-  const isConnected = false;
-  const address = "0XA348105B031BC94Cd701104Eec382976b6b8242C";
+  const { address, isConnected } = useAccount();
 
   return (
     <div>
