@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./WalletConnect.module.css";
+import styles from "./ConnectButton.module.css";
 
 const formatAddress = (address: string) => {
   const length = address.length;
@@ -9,11 +9,11 @@ const formatAddress = (address: string) => {
   )}`.toUpperCase();
 };
 
-interface WalletConnectProps {
+interface ConnectButtonProps {
   toggleModal: () => void;
 }
 
-const WalletConnect: React.FC<WalletConnectProps> = ({ toggleModal }) => {
+const ConnectButton: React.FC<ConnectButtonProps> = ({ toggleModal }) => {
   // const { address, isConnected } = useAccount();
 
   const isConnected = false;
@@ -29,11 +29,11 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ toggleModal }) => {
         </div>
       ) : (
         <button className={styles.click} onClick={toggleModal}>
-          Connect Wallet
+          CONNECT WALLET
         </button>
       )}
     </div>
   );
 };
 
-export default WalletConnect;
+export default ConnectButton;

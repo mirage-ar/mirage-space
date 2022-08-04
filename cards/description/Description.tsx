@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./Description.module.css";
 
-import Connect from "../../components/buttons/connect/Connect";
+import ConnectButton from "../../components/buttons/ConnectButton";
 
-const Description: React.FC = () => {
+interface DescriptionProps {
+  toggleModal: () => void;
+}
+
+
+const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -18,7 +23,7 @@ const Description: React.FC = () => {
       </div>
       <div className={styles.cta}>Connect Wallet to mint</div>
       <div className={styles.buttonContainer}>
-        <Connect />
+        <ConnectButton toggleModal={ toggleModal } />
       </div>
     </div>
   );

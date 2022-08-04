@@ -16,11 +16,10 @@ import Description from "../cards/description/Description";
 import Display from "../cards/display/mobile/Display";
 import Map from "../cards/map/Map";
 import Others from "../cards/others/Others";
-import Connect from "../components/buttons/connect/Connect";
-import Button from "../components/buttons/button";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectedUser from "../components/user/ConnectedUser";
+import ConnectButton from "../components/buttons/ConnectButton";
 
 import NoSSR from "../components/utilities/NoSSR";
 
@@ -62,11 +61,10 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
-              <Button toggleModal={toggleModal} />
-              <Connect />
+              <ConnectButton  toggleModal={ toggleModal }/>
               <Display />
               <Map isMobileView={isMobileView} />
-              <Description />
+              <Description toggleModal={toggleModal}/>
               <Others isMobileView={isMobileView} />
             </div>
           ) : (
