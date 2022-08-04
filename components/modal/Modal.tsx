@@ -2,6 +2,7 @@ import React from "react";
 import { useAccount } from "wagmi";
 import styles from "./Modal.module.css";
 import Address from "../utilities/Address";
+import ConnectFlow from "../../flows/connect/connectFLow";
 
 interface ModalProps {
   isOpen: boolean;
@@ -56,7 +57,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         </div>
       ) : (
         <div>
-          
+          <div className={styles.container}>
+            <div
+              ref={outsideRef}
+              className={styles.modalOverlay}
+              onClick={handleCloseOnOverlay}
+            />
+            <div className={styles.modalBox}>
+              <div className={styles.modalTopbar}>
+                <div className={styles.modalTitle}>CONNECT WALLET</div>
+                <div className={styles.connected}>
+                  <button className={styles.modalClose} onClick={onClose}>
+                    <img src={"/images/close.svg"} alt={"close modal"} />
+                  </button>
+                </div>
+              </div>
+              <ConnectFlow />
+            </div>
+          </div>
         </div>
       )}
     </>

@@ -7,7 +7,6 @@ interface DescriptionProps {
   toggleModal: () => void;
 }
 
-
 const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
   return (
     <div className={styles.container}>
@@ -23,7 +22,7 @@ const Description: React.FC<DescriptionProps> = ({ toggleModal }) => {
       </div>
       <div className={styles.cta}>Connect Wallet to mint</div>
       <div className={styles.buttonContainer}>
-        <ConnectButton toggleModal={ toggleModal } />
+        <ConnectButton toggleModal={toggleModal} />
       </div>
     </div>
   );

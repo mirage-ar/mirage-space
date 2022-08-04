@@ -4,7 +4,11 @@ import styles from "./DesktopDisplay.module.css";
 import Map from "../../map/Map";
 import Description from "../../description/Description";
 
-const DesktopDisplay: React.FC = () => {
+interface DesktopDisplayProps {
+  toggleModal: () => void;
+}
+
+const DesktopDisplay: React.FC<DesktopDisplayProps> = ({ toggleModal }) => {
   return (
     <div className={styles.container}>
       <div className={styles.leftContent}>
@@ -30,7 +34,7 @@ const DesktopDisplay: React.FC = () => {
           <p>0X69...420</p>
         </div>
         <Map />
-        <Description />
+        <Description toggleModal={toggleModal} />
       </div>
       <div className={styles.rightContent}>
         <div className={styles.piece}>

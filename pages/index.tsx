@@ -69,6 +69,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
             </div>
           ) : (
             <div className={styles.desktopContainer}>
+               <Modal isOpen={isModalOpen} onClose={toggleModal} />
               <div className={styles.title}>
                 <img src="/images/m.svg" className={styles.titleImage} />
                 <p className={styles.titleText}>
@@ -78,7 +79,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                   <ConnectedUser />
                 </div>
               </div>
-              <DesktopDisplay />
+              <DesktopDisplay toggleModal={toggleModal} />
               <Others isMobileView={isMobileView} />
             </div>
           )}

@@ -22,7 +22,7 @@
 .modalBox {
   position: relative;
   width: 396px;
-  height: 328px;
+  height: auto;
   margin: 0 10%;
   box-sizing: border-box;
   background-color: white;
