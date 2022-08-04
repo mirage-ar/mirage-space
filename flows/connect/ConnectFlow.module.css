@@ -8,4 +8,20 @@
 .connect {
     width: 179px;
     height: 45px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.connect img {
+    width: 24px;
+}
+
+.connect p {
+    padding-right: 10px;
 }
