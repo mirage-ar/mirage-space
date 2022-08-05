@@ -7,7 +7,7 @@ import Map from "../cards/map/Map";
 import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
-import ConnectButton from "../components/buttons/ConnectButton";
+import ConnectButton from "../components/buttons/connect/ConnectButton";
 import NoSSR from "../components/utilities/NoSSR";
 
 import { useApplicationContext } from "../context/state";

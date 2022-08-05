@@ -1,7 +1,7 @@
 import { WagmiConfig, configureChains, chain, createClient } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
 import { ApplicationProvider } from "../context/state";
@@ -17,7 +17,7 @@ const client = createClient({
   autoConnect: true,
   provider,
   connectors: [
-    new InjectedConnector({ chains }),
+    new MetaMaskConnector({ chains }),
     new WalletConnectConnector({
       chains,
       options: {

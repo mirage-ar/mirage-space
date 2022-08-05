@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Description.module.css";
 
-import ConnectButton from "../../components/buttons/ConnectButton";
+import MintButton from "../../components/buttons/mint/MintButton";
 
 const Description: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Description: React.FC = () => {
       </div>
       <div className={styles.cta}>Connect Wallet to mint</div>
       <div className={styles.buttonContainer}>
-        <ConnectButton />
+        <MintButton />
       </div>
     </div>
   );

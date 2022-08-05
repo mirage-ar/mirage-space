@@ -23,9 +23,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  //TODO: is minted dummy data
+  const isMinted = false
+
   return isOpen ? (
     <>
-      {isConnected ? (
+      {isMinted ? (
         <div className={styles.container}>
           <div
             ref={outsideRef}
@@ -41,7 +44,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </button>
               </div>
             </div>
-            <Successful />
+            Mint
           </div>
         </div>
       ) : (
