@@ -7,6 +7,8 @@ interface ApplicationContext {
   setMobileView: any;
   isModalOpen: boolean;
   toggleModal: () => void;
+  transactionHash: string;
+  setTransactionHash: any;
 }
 
 const defaultContext: ApplicationContext = {
@@ -14,6 +16,8 @@ const defaultContext: ApplicationContext = {
   setMobileView: () => {},
   isModalOpen: false,
   toggleModal: () => {},
+  transactionHash: "",
+  setTransactionHash: () => {},
 };
 
 const Context = createContext(defaultContext);
@@ -21,7 +25,8 @@ const Context = createContext(defaultContext);
 export function ApplicationProvider({ children }) {
   const [isMobileView, setMobileView] = useState(false);
   const [isModalOpen, setModalState] = useState(false);
-  
+  const [transactionHash, setTransactionHash] = useState("");
+
   const toggleModal = () => setModalState(!isModalOpen);
 
   const value: ApplicationContext = {
@@ -29,6 +34,8 @@ export function ApplicationProvider({ children }) {
     setMobileView,
     isModalOpen,
     toggleModal,
+    transactionHash,
+    setTransactionHash,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

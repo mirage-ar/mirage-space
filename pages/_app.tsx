@@ -10,7 +10,7 @@ import "../styles/globals.css";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.rinkeby, chain.goerli],
-  [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
 );
 
 const client = createClient({

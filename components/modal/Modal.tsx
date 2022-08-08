@@ -1,10 +1,11 @@
 import React from "react";
-import { useAccount } from "wagmi";
+import { useAccount, useWaitForTransaction } from "wagmi";
 import styles from "./Modal.module.css";
 import Address from "../utilities/Address";
 import ConnectFlow from "../../flows/connect/ConnectFlow";
 import MintFlow from "../../flows/mint/MintFlow";
 import Successful from "../successful/Successful";
+import { useApplicationContext } from "../../context/state";
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,7 +14,10 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const outsideRef = React.useRef(null);
-  const { isConnected } = useAccount();
+  const { transactionHash } = useApplicationContext();
+  const { isSuccess } = useWaitForTransaction({
+    hash: transactionHash,
+  });
 
   const handleCloseOnOverlay = (
     e: React.MouseEvent<HTMLElement, MouseEvent>
@@ -23,12 +27,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  //TODO: is minted dummy data
-  const isMinted = false
-
   return isOpen ? (
     <>
-      {isMinted ? (
+      {isSuccess ? (
         <div className={styles.container}>
           <div
             ref={outsideRef}
