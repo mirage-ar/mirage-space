@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useApplicationContext } from "../../../context/state";
 import {
   useAccount,
@@ -11,8 +11,10 @@ import styles from "./MintButton.module.css";
 import { CONTRACT } from "./contract";
 
 const MintButton: React.FC = () => {
+  const [openModal, setOpenModal] = useState(false);
   const { address, isConnected } = useAccount();
-  const { toggleModal, setTransactionHash } = useApplicationContext();
+  const { isModalOpen, toggleModal, transactionHash, setTransactionHash } =
+    useApplicationContext();
 
   const { config } = usePrepareContractWrite({
     addressOrName: "0x707053274D1f443f62AAaD6FE28b82e7CB1D370e",
@@ -27,19 +29,35 @@ const MintButton: React.FC = () => {
     hash: data?.hash,
   });
 
-  // useEffect(() => {
-  //   setTransactionHash(data?.hash);
-  // }, [data?.hash, setTransactionHash]);
+  useEffect(() => {
+    // set transaction hash state
+    if (data?.hash !== transactionHash) {
+      setTransactionHash(data?.hash);
+    }
 
-  console.log(`Loading: ${isLoading}`);
-  console.log(`Success: ${isSuccess}`);
+    if (isSuccess && !isModalOpen && !openModal) {
+      setOpenModal(true);
+      toggleModal();
+    }
+  }, [
+    data?.hash,
+    transactionHash,
+    setTransactionHash,
+    isSuccess,
+    toggleModal,
+    isModalOpen,
+    openModal,
+    setOpenModal,
+  ]);
+
+  useEffect(() => {});
 
   if (isLoading) {
-    return <div>Loading Comp...</div>;
+    return <div style={{ color: "#fff" }}>Loading...</div>;
   }
 
   if (isSuccess) {
-    toggleModal();
+    return <div style={{ color: "#fff" }}>Success...</div>;
   }
 
   return (
