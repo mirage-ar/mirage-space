@@ -1,11 +1,8 @@
 import React from "react";
-import { useAccount, useWaitForTransaction } from "wagmi";
-import styles from "./Modal.module.css";
-import Address from "../utilities/Address";
+import { useWaitForTransaction } from "wagmi";
 import ConnectFlow from "../../flows/connect/ConnectFlow";
-import MintFlow from "../../flows/mint/MintFlow";
-import Successful from "../successful/Successful";
 import { useApplicationContext } from "../../state/context";
+import styles from "./Modal.module.css";
 
 interface ModalProps {
   isOpen: boolean;

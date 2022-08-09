@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NextPage } from "next";
 import { gql } from "@apollo/client";
-import client from "../state/graph";
+import client, { Mirage } from "../state/graph";
 import styles from "./index.module.css";
 
 import Description from "../cards/description/Description";
@@ -11,20 +11,24 @@ import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectButton from "../components/buttons/connect/ConnectButton";
-import NoSSR from "../components/utilities/NoSSR";
+import NoSSR from "../components/utils/NoSSR";
 
 import { useApplicationContext } from "../state/context";
 
 interface Props {
+  items?: Array<Mirage>;
   isMobileView?: boolean;
 }
 
-const Home: NextPage<Props> = ({ isMobileView }) => {
-  const { isModalOpen, toggleModal, setMobileView } = useApplicationContext();
+const Home: NextPage<Props> = ({ isMobileView, items }) => {
+  const { isModalOpen, toggleModal, setMobileView, setItems } =
+    useApplicationContext();
 
   useEffect(() => {
     setMobileView(isMobileView);
-  }, [isMobileView]);
+    setItems(items);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <NoSSR>
@@ -63,8 +67,34 @@ export const getServerSideProps = async ({ req }) => {
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
 
+  const { data } = await client.query({
+    // using null values for item location input to return all items
+    // TODO: create single Item query that takes contract addres, etc
+    query: gql`
+      query AllItems {
+        items(input: { latitude: 0, longitude: 0, radius: 0 }) {
+          id
+          assetUri
+          latitude
+          longitude
+          elevation
+          artist {
+            id
+            name
+            handle
+            icon
+          }
+          token {
+            contractAddress
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
+      items: data?.items,
       isMobileView: Boolean(isMobileView),
       userAgent,
     },

@@ -1,18 +1,8 @@
 import React from "react";
 import { useAccount } from "wagmi";
+import { formatAddress } from "../../utils/functions"
 import { useApplicationContext } from "../../../state/context";
 import styles from "./ConnectButton.module.css";
-
-
-// TODO: Move to util folder
-const formatAddress = (address: string) => {
-  const length = address.length;
-  return `${address.substring(0, 4)}...${address.substring(
-    length - 5,
-    length - 1
-  )}`.toUpperCase();
-};
-
 
 const ConnectButton: React.FC = () => {
   const { address, isConnected } = useAccount();

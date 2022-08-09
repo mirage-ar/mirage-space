@@ -1,7 +1,11 @@
 import React from "react";
+import { formatAddress } from "../../../components/utils/functions"
+import { useApplicationContext } from "../../../state/context";
 import styles from "./Display.module.css";
 
 const Display: React.FC = () => {
+  const { items } = useApplicationContext();
+
   return (
     <div className={styles.container}>
       <div className={styles.topHalf}>
@@ -16,7 +20,7 @@ const Display: React.FC = () => {
       <div className={styles.bottomHalf}>
         <div className={styles.name}>
           <p>THE GOLDEN QUEEN</p>
-          <p>BY @DTANITA</p>
+          <p>BY @{items[0]?.artist.handle.toUpperCase()}</p>
         </div>
         <div className={styles.price}>
           <p className={styles.priceTitle}>PRICE</p>
@@ -31,7 +35,7 @@ const Display: React.FC = () => {
         <div className={styles.address}>
           <p className={styles.addressTitle}>CONTRACT ADDRESS</p>
           <p className={styles.addressLink}>
-            0x69...420 <img src="/images/navigate.svg" />{" "}
+            {formatAddress(items[0]?.token?.contractAddress || "0x697053274D1f443f62AAaD6FE28b82e7CB1420X")} <img src="/images/navigate.svg" />
           </p>
         </div>
       </div>

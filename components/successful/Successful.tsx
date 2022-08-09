@@ -1,5 +1,5 @@
 import React from "react";
-import Address from "../utilities/Address";
+import Address from "../utils/Address";
 import styles from "./Successful.module.css";
 
 const Successful: React.FC = () => {
