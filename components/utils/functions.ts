@@ -8,8 +8,8 @@
  */
 export const formatAddress = (address: string) => {
     const length = address.length;
-    return `${address.substring(0, 4)}...${address.substring(
-      length - 5,
-      length - 1
+    return `${address.substring(0, 5)}...${address.substring(
+      length - 4,
+      length
     )}`.toUpperCase();
   };

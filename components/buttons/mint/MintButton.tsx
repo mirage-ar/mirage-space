@@ -50,8 +50,6 @@ const MintButton: React.FC = () => {
     setOpenModal,
   ]);
 
-  useEffect(() => {});
-
   if (isLoading) {
     return <div className={styles.loading}><img src={"/images/spinner.gif"}/></div>;
   }

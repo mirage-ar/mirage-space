@@ -1,5 +1,5 @@
 .connectedContainer {
-  width: 226px;
+  max-width: 400px;
   height: 32px;
   background-color: black;
   font-size: 11px;
@@ -9,11 +9,13 @@
   justify-content: center;
   padding: 10px 20px 10px 20px;
   border-radius: 30px;
+  border: none;
   font-family: Helvetica-Monospaced, monospaced;
 }
 
 .connectedAs {
   color: white;
+  width: 80px;
 }
 
 .address {
