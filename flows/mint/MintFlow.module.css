@@ -16,12 +16,13 @@
 }
 
 .modalContent {
-  height: 180px;
-  padding: 15px;
+  height: 150px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  padding-top: 8px;
 }
 
 .info {
@@ -45,4 +46,8 @@
   align-items: center;
   justify-content: center;
   font-size: 13px;
+}
+
+.container {
+  padding: 15px 0px 20px 15px;
 }

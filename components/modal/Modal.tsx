@@ -1,7 +1,9 @@
 import React from "react";
 import { useWaitForTransaction } from "wagmi";
 import ConnectFlow from "../../flows/connect/ConnectFlow";
+import MintFlow from "../../flows/mint/MintFlow";
 import { useApplicationContext } from "../../state/context";
+import Address from "../utils/Address";
 import styles from "./Modal.module.css";
 
 interface ModalProps {
@@ -35,14 +37,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           />
           <div className={styles.modalBox}>
             <div className={styles.modalTopbar}>
-              <div className={styles.modalTitle}>CONNECT WALLET</div>
+              <div className={styles.modalTitle}>MINT</div>
               <div className={styles.connected}>
+                <img src={"/images/live.svg"} /><p>CONNECTED AS <Address /></p>
                 <button className={styles.modalClose} onClick={onClose}>
                   <img src={"/images/close.svg"} alt={"close modal"} />
                 </button>
               </div>
             </div>
-            Mint
+            <MintFlow />
           </div>
         </div>
       ) : (

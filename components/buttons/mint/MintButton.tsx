@@ -53,11 +53,11 @@ const MintButton: React.FC = () => {
   useEffect(() => {});
 
   if (isLoading) {
-    return <div style={{ color: "#fff" }}>Loading...</div>;
+    return <div className={styles.loading}><img src={"/images/spinner.gif"}/></div>;
   }
 
   if (isSuccess) {
-    return <div style={{ color: "#fff" }}>Success...</div>;
+    return <button className={styles.success} onClick={toggleModal}><img src="/images/check.svg"/></button>;
   }
 
   return (
