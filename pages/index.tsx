@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   useEffect(() => {
     setMobileView(isMobileView);
     setItems(items);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -45,10 +45,13 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
         <div className={styles.desktopContainer}>
           <Modal isOpen={isModalOpen} onClose={toggleModal} />
           <div className={styles.title}>
-            <img src="/images/m.svg" className={styles.titleImage} />
-            <p className={styles.titleText}>
-              DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
-            </p>
+            <div className={styles.titleLeft}>
+              <img src="/images/m.svg" className={styles.titleImage} />
+              <p className={styles.titleText}>
+                DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+              </p>
+            </div>
+
             <div className={styles.connected}>
               <ConnectButton />
             </div>
