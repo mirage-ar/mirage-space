@@ -5,7 +5,7 @@ import Address from "../utilities/Address";
 import ConnectFlow from "../../flows/connect/ConnectFlow";
 import MintFlow from "../../flows/mint/MintFlow";
 import Successful from "../successful/Successful";
-import { useApplicationContext } from "../../context/state";
+import { useApplicationContext } from "../../state/context";
 
 interface ModalProps {
   isOpen: boolean;

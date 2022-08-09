@@ -1,3 +1,4 @@
+// TODO: attempt to convert this back to JSON
 export const CONTRACT = {
   _format: "hh-sol-artifact-1",
   contractName: "CLOUDX",

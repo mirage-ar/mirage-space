@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useApplicationContext } from "../../../context/state";
+import { useApplicationContext } from "../../../state/context";
 import {
   useAccount,
   usePrepareContractWrite,

@@ -1,5 +1,5 @@
 import React from "react";
-import { useApplicationContext } from "../../context/state";
+import { useApplicationContext } from "../../state/context";
 import styles from "./MiniView.module.css";
 
 const MobileMini: React.FC = () => {

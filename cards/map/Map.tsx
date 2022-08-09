@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import { useApplicationContext } from "../../context/state";
+import { useApplicationContext } from "../../state/context";
 import styles from "./Map.module.css";
 
 const Map: React.FC = () => {

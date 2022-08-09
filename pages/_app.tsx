@@ -4,7 +4,7 @@ import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
-import { ApplicationProvider } from "../context/state";
+import { ApplicationProvider } from "../state/context";
 
 import "../styles/globals.css";
 

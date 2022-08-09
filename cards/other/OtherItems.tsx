@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./OtherItems.module.css";
 import MiniView from "../../components/mini/MiniView";
-import { useApplicationContext } from "../../context/state";
+import { useApplicationContext } from "../../state/context";
 
 const OtherItems: React.FC = () => {
   const { isMobileView } = useApplicationContext();

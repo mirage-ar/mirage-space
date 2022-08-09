@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { NextPage } from "next";
+import { gql } from "@apollo/client";
+import client from "../state/graph";
 import styles from "./index.module.css";
+
 import Description from "../cards/description/Description";
 import Display from "../cards/display/mobile/Display";
 import Map from "../cards/map/Map";
@@ -10,7 +13,7 @@ import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectButton from "../components/buttons/connect/ConnectButton";
 import NoSSR from "../components/utilities/NoSSR";
 
-import { useApplicationContext } from "../context/state";
+import { useApplicationContext } from "../state/context";
 
 interface Props {
   isMobileView?: boolean;
@@ -54,15 +57,17 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
   );
 };
 
-Home.getInitialProps = async ({ req }) => {
+export const getServerSideProps = async ({ req }) => {
   const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
   const isMobileView = userAgent?.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
 
   return {
-    isMobileView: Boolean(isMobileView),
-    userAgent,
+    props: {
+      isMobileView: Boolean(isMobileView),
+      userAgent,
+    },
   };
 };
 

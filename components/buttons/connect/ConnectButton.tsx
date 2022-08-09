@@ -1,6 +1,6 @@
 import React from "react";
 import { useAccount } from "wagmi";
-import { useApplicationContext } from "../../../context/state";
+import { useApplicationContext } from "../../../state/context";
 import styles from "./ConnectButton.module.css";
 
 
