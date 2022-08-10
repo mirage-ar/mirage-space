@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./DesktopDisplay.module.css";
 
-import Map from "../../map/Map";
 import Description from "../../description/Description";
+import Mapbox from "../../mapbox/Mapbox";
 
 const DesktopDisplay: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const DesktopDisplay: React.FC = () => {
           <p className={styles.leftText}>CONTRACT ADDRESS</p>
           <p>0X69...420</p>
         </div>
-        <Map />
+        <Mapbox />
         <Description />
       </div>
       <div className={styles.rightContent}>

@@ -12,7 +12,7 @@ const MintFlow: React.FC = () => {
       </div>
       <div className={styles.modalContent}>
         <button className={styles.connect}> MIRAGE APP </button>
-        <button className={styles.connect}> OPENSEA </button>
+        <button className={styles.info}> OPENSEA </button>
         <button className={styles.info}> ETHERSCAN </button>
       </div>
     </div>

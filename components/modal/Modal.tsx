@@ -17,6 +17,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const { isSuccess } = useWaitForTransaction({
     hash: transactionHash,
   });
+  const { isMobileView } = useApplicationContext();
 
   const handleCloseOnOverlay = (
     e: React.MouseEvent<HTMLElement, MouseEvent>
@@ -30,16 +31,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     <>
       {isSuccess ? (
         <div className={styles.container}>
+          ``
           <div
             ref={outsideRef}
             className={styles.modalOverlay}
             onClick={handleCloseOnOverlay}
           />
-          <div className={styles.modalBox}>
-            <div className={styles.modalTopbar}>
+          <div className={styles[isMobileView ? "mobileModalBox" : "modalBox"]}>
+            <div
+              className={
+                styles[isMobileView ? "mobileModalTopbar" : "modalTopbar"]
+              }
+            >
               <div className={styles.modalTitle}>MINT</div>
               <div className={styles.connected}>
-                <img src={"/images/live.svg"} /><p>CONNECTED AS <Address /></p>
+                <img src={"/images/live.svg"} />
+                <p>
+                  CONNECTED AS <Address />
+                </p>
                 <button className={styles.modalClose} onClick={onClose}>
                   <img src={"/images/close.svg"} alt={"close modal"} />
                 </button>
@@ -56,8 +65,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               className={styles.modalOverlay}
               onClick={handleCloseOnOverlay}
             />
-            <div className={styles.modalBox}>
-              <div className={styles.modalTopbar}>
+            <div
+              className={styles[isMobileView ? "mobileModalBox" : "modalBox"]}
+            >
+              <div
+                className={
+                  styles[isMobileView ? "mobileModalTopbar" : "modalTopbar"]
+                }
+              >
                 <div className={styles.modalTitle}>CONNECT WALLET</div>
                 <div className={styles.connected}>
                   <button className={styles.modalClose} onClick={onClose}>

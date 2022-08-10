@@ -9,7 +9,7 @@
 }
 
 .leftContent {
-  width: 400px;
+  width: 430px;
   height: 815px;
   background-color: black;
   display: flex;
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   border-top: var(--line);
-  width: 400px;
+  width: 430px;
   height: 39px;
 }
 
