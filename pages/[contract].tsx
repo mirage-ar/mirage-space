@@ -7,6 +7,7 @@ import styles from "./index.module.css";
 
 import Description from "../cards/description/Description";
 import Display from "../cards/display/mobile/Display";
+import Map from "../cards/map/Map";
 import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
@@ -14,7 +15,6 @@ import ConnectButton from "../components/buttons/connect/ConnectButton";
 import NoSSR from "../components/utils/NoSSR";
 
 import { useApplicationContext } from "../state/context";
-import Mapbox from "../cards/mapbox/Mapbox";
 
 interface Props {
   items?: Array<Mirage>;
@@ -22,16 +22,15 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ isMobileView, items }) => {
-  const { isModalOpen, toggleModal, setMobileView, setItems } =
-    useApplicationContext();
-
   const router = useRouter();
-  // TODO: add dynamic route for contract address
-  // const { pid } = router.query
+  const { contract } = router.query;
+  const { isModalOpen, toggleModal, setMobileView, setItems, setContract } =
+    useApplicationContext();
 
   useEffect(() => {
     setMobileView(isMobileView);
     setItems(items);
+    setContract(contract);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -42,7 +41,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           <Modal isOpen={isModalOpen} onClose={toggleModal} />
           <ConnectButton />
           <Display />
-          <Mapbox />
+          <Map />
           <Description />
           <OtherItems />
         </div>

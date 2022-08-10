@@ -1,10 +1,16 @@
 import React from "react";
-import { formatAddress } from "../../../components/utils/functions"
 import { useApplicationContext } from "../../../state/context";
+import { formatAddress } from "../../../components/utils/functions";
+import Timer from "../../../components/utils/Timer";
 import styles from "./Display.module.css";
 
 const Display: React.FC = () => {
-  const { items } = useApplicationContext();
+  const { items, contract, defaultItem } = useApplicationContext();
+
+  const mirage =
+    items.find((item) => item.token.contractAddress == contract) || defaultItem;
+
+    console.log(mirage);
 
   return (
     <div className={styles.container}>
@@ -19,23 +25,26 @@ const Display: React.FC = () => {
       </div>
       <div className={styles.bottomHalf}>
         <div className={styles.name}>
-          <p>THE GOLDEN QUEEN</p>
-          <p>BY @{items[0]?.artist.handle.toUpperCase()}</p>
+          <p>{mirage.name.toUpperCase()}</p>
+          <p>BY @{mirage.artist.handle.toUpperCase()}</p>
         </div>
         <div className={styles.price}>
           <p className={styles.priceTitle}>PRICE</p>
-          <p>0.002 ETH</p>
+          <p>{mirage.token.mintPrice} ETH</p>
         </div>
         <div className={styles.timer}>
           <p className={styles.timerTitle}>
             TIMER <img src="/images/live.svg" />
           </p>
-          <p>20:30:20s</p>
+          <p>
+            <Timer start={mirage.dropStart} end={mirage.dropEnd} />
+          </p>
         </div>
         <div className={styles.address}>
           <p className={styles.addressTitle}>CONTRACT ADDRESS</p>
           <p className={styles.addressLink}>
-            {formatAddress(items[0]?.token?.contractAddress || "0x697053274D1f443f62AAaD6FE28b82e7CB1420X")} <img src="/images/navigate.svg" />
+            {formatAddress(mirage.token.contractAddress)}{" "}
+            <img src="/images/navigate.svg" />
           </p>
         </div>
       </div>
