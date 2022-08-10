@@ -1,30 +1,29 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
-export interface Mirage {
-  id: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  elevation: number;
-  cityName: string;
-  dropStart: Date;
-  dropEnd: Date;
-  artist: Artist;
-  token: Token;
-}
-
-export interface Artist {
-  id: string;
-  name: string;
-  handle: string;
-  icon: string;
-}
-
-export interface Token {
-  id: string;
-  tokenId: string;
-  contractAddress: string;
-}
+export const allItems = gql`
+  query AllItems {
+    items(input: { latitude: 0, longitude: 0, radius: 0 }) {
+      id
+      name
+      assetUri
+      latitude
+      longitude
+      elevation
+      cityName
+      dropStart
+      dropEnd
+      artist {
+        id
+        name
+        handle
+        icon
+      }
+      token {
+        contractAddress
+      }
+    }
+  }
+`;
 
 const client = new ApolloClient({
   uri: "https://9bago6zw91.execute-api.us-east-1.amazonaws.com",

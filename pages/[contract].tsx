@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { gql } from "@apollo/client";
-import client, { Mirage } from "../state/graph";
+import client, { allItems } from "../state/graph";
+import { Mirage } from "../state/types";
 import styles from "./index.module.css";
 
 import Description from "../cards/description/Description";
@@ -75,32 +75,7 @@ export const getServerSideProps = async ({ req }) => {
   );
 
   const { data } = await client.query({
-    // using null values for item location input to return all items
-    // TODO: create single Item query that takes contract addres, etc
-    query: gql`
-      query AllItems {
-        items(input: { latitude: 0, longitude: 0, radius: 0 }) {
-          id
-          name
-          assetUri
-          latitude
-          longitude
-          elevation
-          cityName
-          dropStart
-          dropEnd
-          artist {
-            id
-            name
-            handle
-            icon
-          }
-          token {
-            contractAddress
-          }
-        }
-      }
-    `,
+    query: allItems,
   });
 
   return {

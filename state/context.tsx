@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { createContext, useContext } from "react";
 
-import { Mirage } from "./graph";
+import { Mirage } from "./types";
 
 interface ApplicationContext {
   isMobileView: boolean;
@@ -18,6 +18,7 @@ interface ApplicationContext {
   defaultItem: Mirage;
 }
 
+// TODO: !add loading states instead of default mirage
 const defaultItem: Mirage = {
   id: "0",
   name: "Rebased",
@@ -37,6 +38,7 @@ const defaultItem: Mirage = {
     id: "0",
     tokenId: "0",
     contractAddress: "0x00001111",
+    mintPrice: 0.01
   },
 };
 

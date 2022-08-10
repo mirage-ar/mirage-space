@@ -10,6 +10,8 @@ const Display: React.FC = () => {
   const mirage =
     items.find((item) => item.token.contractAddress == contract) || defaultItem;
 
+    console.log(mirage);
+
   return (
     <div className={styles.container}>
       <div className={styles.topHalf}>
@@ -28,7 +30,7 @@ const Display: React.FC = () => {
         </div>
         <div className={styles.price}>
           <p className={styles.priceTitle}>PRICE</p>
-          <p>0.002 ETH</p>
+          <p>{mirage.token.mintPrice} ETH</p>
         </div>
         <div className={styles.timer}>
           <p className={styles.timerTitle}>
