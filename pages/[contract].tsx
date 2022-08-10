@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NextPage } from "next";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import client, { Mirage } from "../state/graph";
 import styles from "./index.module.css";
@@ -22,16 +22,15 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ isMobileView, items }) => {
-  const { isModalOpen, toggleModal, setMobileView, setItems } =
+  const router = useRouter();
+  const { contract } = router.query;
+  const { isModalOpen, toggleModal, setMobileView, setItems, setContract } =
     useApplicationContext();
-
-    const router = useRouter()
-    // TODO: add dynamic route for contract address
-    // const { pid } = router.query
 
   useEffect(() => {
     setMobileView(isMobileView);
     setItems(items);
+    setContract(contract);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -88,6 +87,8 @@ export const getServerSideProps = async ({ req }) => {
           longitude
           elevation
           cityName
+          dropStart
+          dropEnd
           artist {
             id
             name

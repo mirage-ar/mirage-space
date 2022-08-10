@@ -2,10 +2,13 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export interface Mirage {
   id: string;
-  // name: string;
+  name: string;
   latitude: number;
   longitude: number;
   elevation: number;
+  cityName: string;
+  dropStart: Date;
+  dropEnd: Date;
   artist: Artist;
   token: Token;
 }
@@ -24,8 +27,7 @@ export interface Token {
 }
 
 const client = new ApolloClient({
-  // TODO: update to prod uri
-  uri: "https://dxplittukg.execute-api.us-east-1.amazonaws.com",
+  uri: "https://9bago6zw91.execute-api.us-east-1.amazonaws.com",
   cache: new InMemoryCache(),
 });
 
