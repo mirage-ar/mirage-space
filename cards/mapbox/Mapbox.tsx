@@ -1,18 +1,48 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import 'mapbox-gl/dist/mapbox-gl.css'
+import "mapbox-gl/dist/mapbox-gl.css";
 import styles from "./Mapbox.module.css";
+import { useApplicationContext } from "../../state/context";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmlpZ21udCIsImEiOiJjbDBkcXRwOHcwOWw0M2RrOWMydjhpN2o3In0.I6nZZg9gLK-ozUy4zRuZdQ";
 
+function dmsString(deg: number, lng: boolean): string {
+  var d = parseInt(deg.toString());
+  var minfloat = Math.abs((deg - d) * 60);
+  var m = Math.floor(minfloat);
+  var secfloat = (minfloat - m) * 60;
+  var s = Math.round((secfloat + Number.EPSILON) * 100) / 100;
+  d = Math.abs(d);
+
+  if (s == 60) {
+    m++;
+    s = 0;
+  }
+  if (m == 60) {
+    d++;
+    m = 0;
+  }
+
+  let dms = {
+    dir: deg < 0 ? (lng ? "W" : "S") : lng ? "E" : "N",
+    deg: d,
+    min: m,
+    sec: s,
+  };
+  return `${dms.deg}\u00B0${dms.min}'${dms.sec}"${dms.dir}`;
+}
+
 const Mapbox: React.FC = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const marker = useRef(null);
 
-  const [lng, setLng] = useState(-74);
-  const [lat, setLat] = useState(40.7);
+  const { items, contract, defaultItem } = useApplicationContext();
+  const mirage =
+    items.find((item) => item.token.contractAddress == contract) || defaultItem;
+
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
@@ -20,44 +50,38 @@ const Mapbox: React.FC = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/fiigmnt/cl4evbfs6001q14lqhwnmjo11",
-      center: [lng, lat],
+      center: [mirage.longitude, mirage.latitude],
       zoom: zoom,
     });
 
-    geojson.features.map((feature) => 
-      new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(map.current)
-    );
+    new mapboxgl.Marker(marker.current)
+      .setLngLat([mirage.longitude, mirage.latitude])
+      .addTo(map.current);
   });
 
-  const geojson = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        properties: {
-          message: "Foo",
-          iconSize: [60, 60],
-        },
-        geometry: {
-          type: "Point",
-          coordinates: [-74, 40.7],
-        },
-      },
-    ],
-  };
-
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.location}>
         <img src="/images/target.svg" /> NEW YORK CITY
       </div>
       <div className={styles.navigate}>
-        <p>NAVIGATE IN APP</p> <img src="/images/hexSquareThing.svg" />
+        <div className={styles.navigateContent}>
+          <p>NAVIGATE IN APP</p> <img src="/images/hexSquareThing.svg" />
+        </div>
       </div>
       <div className={styles.position}>
-        <p>00°00'00.0"N 00°00'00.0"E</p> <img src="/images/stack.svg" />
+        <div className={styles.positionContent}>
+          <p>
+            {dmsString(mirage.latitude, false)}{" "}
+            {dmsString(mirage.longitude, true)}
+          </p>{" "}
+          <img src="/images/stack.svg" />
+        </div>
       </div>
       <div ref={mapContainer} className={styles.mapContainer}></div>
+      <div ref={marker}>
+        <img src={"/images/mapMarker.svg"} />
+      </div>
     </div>
   );
 };
