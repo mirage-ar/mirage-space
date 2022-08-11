@@ -4,10 +4,9 @@ import { useRouter } from "next/router";
 import client, { allItems } from "../state/graph";
 import { Mirage } from "../state/types";
 import styles from "./index.module.css";
-
+import Mapbox from "../cards/mapbox/Mapbox"
 import Description from "../cards/description/Description";
 import Display from "../cards/display/mobile/Display";
-import Map from "../cards/map/Map";
 import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
@@ -41,7 +40,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           <Modal isOpen={isModalOpen} onClose={toggleModal} />
           <ConnectButton />
           <Display />
-          <Map />
+          <Mapbox />
           <Description />
           <OtherItems />
         </div>
