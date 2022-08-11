@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import 'mapbox-gl/dist/mapbox-gl.css'
 import styles from "./Mapbox.module.css";
 
 mapboxgl.accessToken =
@@ -9,10 +10,9 @@ mapboxgl.accessToken =
 const Mapbox: React.FC = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const mapPoint = useRef(null);
 
-  const [lng, setLng] = useState(-74.0099720717255);
-  const [lat, setLat] = useState(40.71686631327536);
+  const [lng, setLng] = useState(-74);
+  const [lat, setLat] = useState(40.7);
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
@@ -24,10 +24,9 @@ const Mapbox: React.FC = () => {
       zoom: zoom,
     });
 
-    //TODO: Get the map pings working right
-    // new mapboxgl.Marker(mapPoint)
-    //   .setLngLat([-74.0099720717255, 40.71686631327536])
-    //   .addTo(map.current);
+    geojson.features.map((feature) => 
+      new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(map.current)
+    );
   });
 
   const geojson = {
@@ -41,7 +40,7 @@ const Mapbox: React.FC = () => {
         },
         geometry: {
           type: "Point",
-          coordinates: [-74.0099720717255, 40.71686631327536],
+          coordinates: [-74, 40.7],
         },
       },
     ],
