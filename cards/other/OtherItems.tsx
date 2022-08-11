@@ -15,7 +15,7 @@ const OtherItems: React.FC = () => {
       </div>
       <div className={styles[isMobileView ? "miniViews" : "desktopMiniViews"]}>
         {items.map((item) => (
-            <MiniView item={item} />
+            <MiniView key={item.id} item={item} />
         ))}
       </div>
     </div>

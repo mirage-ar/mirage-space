@@ -31,10 +31,13 @@ const Timer: React.FC<Props> = ({ start, end }) => {
 
   function timeBetweenDates(start, end) {
     const rightNow = new Date();
+    const startTime = new Date(start).getTime();
+    const endTime = new Date(end).getTime();
+
     const difference =
       start > rightNow
-        ? end.getTime() - start.getTime()
-        : end.getTime() - rightNow.getTime();
+        ? endTime - startTime
+        : endTime - rightNow.getTime();
 
     if (difference <= 0) {
       // timer finished
