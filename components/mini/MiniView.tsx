@@ -37,7 +37,7 @@ const MobileMini: React.FC<MiniProps> = ({ item }) => {
             />
           </p>
         </div>
-        {!isMobileView && <div className={styles.price}>0.002 ETH</div>}
+        {!isMobileView && <div className={styles.price}>{item.token.mintPrice} ETH</div>}
       </div>
     </div>
   );

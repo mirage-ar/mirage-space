@@ -20,6 +20,7 @@ export const allItems = gql`
       }
       token {
         contractAddress
+        mintPrice
       }
     }
   }
