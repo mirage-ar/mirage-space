@@ -1,3 +1,5 @@
+/* MOBILE */
+
 .container {
   background-color: black;
   width: 428px;
@@ -122,4 +124,90 @@
   width: 16px;
   height: 16px;
   padding-left: 2px;
+}
+
+
+/* DESKTOP */
+
+.desktopContainer {
+  background-color: black;
+  width: 1408px;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktopLeftContent {
+  width: 430px;
+  height: 815px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desktopDisplayTitle {
+  padding-bottom: 32px;
+}
+
+.desktopInfo {
+  color: white;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--line);
+  width: 430px;
+  height: 39px;
+}
+
+.desktopLeftText {
+  color: grey;
+}
+
+.desktopRightContent {
+  margin-left: 100px;
+  width: 815px;
+  height: 815px;
+  background-image: url("/images/desktopDisplayBackground.svg");
+  display: flex;
+  flex-direction: row;
+}
+
+.desktopPiece {
+  width: 712px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 103px;
+  padding-top: 45px;
+}
+
+.desktopPieceInfo {
+  width: 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desktopPieceInfo p {
+  color: white;
+  font-size: 10px;
+}
+
+.desktopDropImage {
+  width: 103px;
+}
+
+.desktopRotation {
+  padding-top: 300px;
+  width: 24px;
+}
+
+.desktopPiecePlacement {
+  width: 450px;
 }

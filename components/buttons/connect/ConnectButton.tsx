@@ -20,7 +20,6 @@ const ConnectButton: React.FC = () => {
           <p className={styles.address}>
             <Address />
           </p>
-          <img className={styles.stack} src="/images/stack.svg" onClick={copyAddress}/>
         </button>
       ) : (
         <button className={styles.click} onClick={toggleModal}>

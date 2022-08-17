@@ -6,10 +6,9 @@ import { Mirage } from "../state/types";
 import styles from "./index.module.css";
 
 import Description from "../cards/description/Description";
-import Display from "../cards/display/mobile/Display";
+import Display from "../cards/display/Display";
 import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
-import DesktopDisplay from "../cards/display/desktop/DesktopDisplay";
 import ConnectButton from "../components/buttons/connect/ConnectButton";
 import NoSSR from "../components/utils/NoSSR";
 
@@ -61,7 +60,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
               <ConnectButton />
             </div>
           </div>
-          <DesktopDisplay />
+          <Display />
           <OtherItems />
         </div>
       )}
