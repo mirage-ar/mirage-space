@@ -62,6 +62,7 @@
   width: 281px;
   height: 400px;
   padding: 16px 6px 0px 6px;
+  cursor: pointer;
 }
 
 .desktopBackground {

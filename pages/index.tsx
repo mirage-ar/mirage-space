@@ -37,31 +37,41 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   return (
     <NoSSR>
       {isMobileView ? (
-        <div className={styles.mobileContainer}>
-          <Modal isOpen={isModalOpen} onClose={toggleModal} />
-          <ConnectButton />
-          <Display />
-          <Mapbox />
-          <Description />
-          <OtherItems />
+        <div>
+          <video autoPlay muted loop className={styles.video}>
+            <source src="/videos/back.mp4" />
+          </video>
+          <div className={styles.mobileContainer}>
+            <Modal isOpen={isModalOpen} onClose={toggleModal} />
+            <ConnectButton />
+            <Display />
+            <Mapbox />
+            <Description />
+            <OtherItems />
+          </div>
         </div>
       ) : (
-        <div className={styles.desktopContainer}>
-          <Modal isOpen={isModalOpen} onClose={toggleModal} />
-          <div className={styles.title}>
-            <div className={styles.titleLeft}>
-              <img src="/images/m.svg" className={styles.titleImage} />
-              <p className={styles.titleText}>
-                DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
-              </p>
-            </div>
+        <div>
+          <video autoPlay muted loop className={styles.video}>
+            <source src="/videos/back.mp4" />
+          </video>
+          <div className={styles.desktopContainer}>
+            <Modal isOpen={isModalOpen} onClose={toggleModal} />
+            <div className={styles.title}>
+              <div className={styles.titleLeft}>
+                <img src="/images/m.svg" className={styles.titleImage} />
+                <p className={styles.titleText}>
+                  DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+                </p>
+              </div>
 
-            <div className={styles.connected}>
-              <ConnectButton />
+              <div className={styles.connected}>
+                <ConnectButton />
+              </div>
             </div>
+            <Display />
+            <OtherItems />
           </div>
-          <Display />
-          <OtherItems />
         </div>
       )}
     </NoSSR>

@@ -59,6 +59,11 @@ const Mapbox: React.FC = () => {
       .addTo(map.current);
   });
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(`${mirage.latitude}, ${mirage.longitude}`);
+    alert("Copied to clipboard!")
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.location}>
@@ -75,7 +80,9 @@ const Mapbox: React.FC = () => {
             {dmsString(mirage.latitude, false)}{" "}
             {dmsString(mirage.longitude, true)}
           </p>{" "}
-          <img src="/images/stack.svg" />
+          <button className={styles.copy} onClick={copyToClipboard}>
+            <img src="/images/stack.svg" />
+          </button>
         </div>
       </div>
       <div ref={mapContainer} className={styles.mapContainer}></div>

@@ -78,3 +78,10 @@
 .location img {
     padding-right: 8px;
 }
+
+.copy {
+  border: none;
+  background: none;
+  width: 3px;
+  cursor: pointer;
+}

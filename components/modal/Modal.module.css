@@ -50,6 +50,7 @@
 .modalClose {
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 .connectIcon {

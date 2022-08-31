@@ -11,6 +11,7 @@
   border-radius: 30px;
   border: none;
   font-family: Helvetica-Monospaced, monospaced;
+  cursor: pointer;
 }
 
 .connectedAs {
@@ -39,4 +40,5 @@
   font-size: 11px;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }

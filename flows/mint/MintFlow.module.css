@@ -32,6 +32,7 @@
   border: 1.5px solid #222222;
   font-size: 13px;
   background-color: white;
+  cursor: pointer;
 }
 
 .connect {
@@ -46,6 +47,7 @@
   align-items: center;
   justify-content: center;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .container {
