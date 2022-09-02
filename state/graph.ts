@@ -27,7 +27,7 @@ export const allItems = gql`
 `;
 
 const client = new ApolloClient({
-  uri: "https://lqzhi8kqz4.execute-api.us-east-1.amazonaws.com",
+  uri: "https://37go84pa77.execute-api.us-east-1.amazonaws.com",
   cache: new InMemoryCache(),
 });
 

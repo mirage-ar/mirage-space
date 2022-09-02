@@ -36,11 +36,11 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
 
   return (
     <NoSSR>
-      {isMobileView ? (
-        <div>
-          <video autoPlay muted loop className={styles.video}>
-            <source src="/videos/back.mp4" />
-          </video>
+      <div>
+        <video autoPlay muted loop className={styles.video}>
+          <source src="/videos/back.mp4" />
+        </video>
+        {isMobileView ? (
           <div className={styles.mobileContainer}>
             <Modal isOpen={isModalOpen} onClose={toggleModal} />
             <ConnectButton />
@@ -49,12 +49,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
             <Description />
             <OtherItems />
           </div>
-        </div>
-      ) : (
-        <div>
-          <video autoPlay muted loop className={styles.video}>
-            <source src="/videos/back.mp4" />
-          </video>
+        ) : (
           <div className={styles.desktopContainer}>
             <Modal isOpen={isModalOpen} onClose={toggleModal} />
             <div className={styles.title}>
@@ -72,8 +67,8 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
             <Display />
             <OtherItems />
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </NoSSR>
   );
 };
