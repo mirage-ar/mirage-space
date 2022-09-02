@@ -38,7 +38,12 @@ const defaultItem: Mirage = {
     id: "0",
     tokenId: "0",
     contractAddress: "0x00001111",
-    mintPrice: 0.01
+    mintPrice: 0.01,
+  },
+  user: {
+    id: "0",
+    wallet: "0x000",
+    ens: "",
   },
 };
 

@@ -9,6 +9,7 @@ export interface Mirage {
     dropEnd: Date;
     artist: Artist;
     token: Token;
+    user: User;
   }
   
   export interface Artist {
@@ -20,7 +21,13 @@ export interface Mirage {
   
   export interface Token {
     id: string;
-    tokenId: string;
+    tokenId: string | null;
     contractAddress: string;
     mintPrice: number;
+  }
+
+  export interface User {
+    id: string;
+    wallet: string;
+    ens: string;
   }

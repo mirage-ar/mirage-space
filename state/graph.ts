@@ -21,9 +21,30 @@ export const allItems = gql`
       token {
         contractAddress
         mintPrice
+        tokenId
+      }
+      user {
+        id
+        wallet
+        ens
       }
     }
   }
+`;
+
+export const authorizeUser = gql`
+  mutation AuthorizeUser($wallet: String!, $nonce: Int!, $hash: String!) {
+  authorizeUser(input: {
+    wallet: $wallet
+    nonce: $nonce
+    hash: $hash
+  }) {
+    id
+    authToken
+    wallet
+    ens
+  }
+}
 `;
 
 const client = new ApolloClient({
