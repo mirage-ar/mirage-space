@@ -4,6 +4,7 @@ import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loade
 import "mapbox-gl/dist/mapbox-gl.css";
 import styles from "./Mapbox.module.css";
 import { useApplicationContext } from "../../state/context";
+import { useSnackbar } from "material-ui-snackbar-provider";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmlpZ21udCIsImEiOiJjbDBkcXRwOHcwOWw0M2RrOWMydjhpN2o3In0.I6nZZg9gLK-ozUy4zRuZdQ";
@@ -38,6 +39,7 @@ const Mapbox: React.FC = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const marker = useRef(null);
+  const snackbar = useSnackbar();
 
   const { items, contract, defaultItem } = useApplicationContext();
   const mirage =
@@ -61,7 +63,7 @@ const Mapbox: React.FC = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${mirage.latitude}, ${mirage.longitude}`);
-    alert("Copied to clipboard!")
+    snackbar.showMessage("Copied!");
   };
 
   return (
@@ -76,10 +78,8 @@ const Mapbox: React.FC = () => {
       </div>
       <div className={styles.position}>
         <div className={styles.positionContent}>
-          <p>
-            {dmsString(mirage.latitude, false)}{" "}
-            {dmsString(mirage.longitude, true)}
-          </p>{" "}
+          <p className={styles.north}> {dmsString(mirage.latitude, false)} </p>
+          <p> {dmsString(mirage.longitude, true)}</p>{" "}
           <button className={styles.copy} onClick={copyToClipboard}>
             <img src="/images/stack.svg" />
           </button>

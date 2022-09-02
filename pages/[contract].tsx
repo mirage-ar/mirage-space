@@ -11,6 +11,7 @@ import OtherItems from "../cards/other/OtherItems";
 import Modal from "../components/modal/Modal";
 import ConnectButton from "../components/buttons/connect/ConnectButton";
 import NoSSR from "../components/utils/NoSSR";
+import { SnackbarProvider } from "material-ui-snackbar-provider";
 
 import { useApplicationContext } from "../state/context";
 
@@ -35,37 +36,39 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   return (
     <NoSSR>
       <div>
-        <video autoPlay muted loop className={styles.video}>
-          <source src="/videos/back.mp4" />
-        </video>
-        {isMobileView ? (
-          <div className={styles.mobileContainer}>
-            <Modal isOpen={isModalOpen} onClose={toggleModal} />
-            <ConnectButton />
-            <Display />
-            <Mapbox />
-            <Description />
-            <OtherItems />
-          </div>
-        ) : (
-          <div className={styles.desktopContainer}>
-            <Modal isOpen={isModalOpen} onClose={toggleModal} />
-            <div className={styles.title}>
-              <div className={styles.titleLeft}>
-                <img src="/images/m.svg" className={styles.titleImage} />
-                <p className={styles.titleText}>
-                  DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
-                </p>
-              </div>
-
-              <div className={styles.connected}>
-                <ConnectButton />
-              </div>
+        <SnackbarProvider SnackbarProps={{ autoHideDuration: 4000 }}>
+          <video autoPlay muted loop className={styles.video}>
+            <source src="/videos/back.mp4" />
+          </video>
+          {isMobileView ? (
+            <div className={styles.mobileContainer}>
+              <Modal isOpen={isModalOpen} onClose={toggleModal} />
+              <ConnectButton />
+              <Display />
+              <Mapbox />
+              <Description />
+              <OtherItems />
             </div>
-            <Display />
-            <OtherItems />
-          </div>
-        )}
+          ) : (
+            <div className={styles.desktopContainer}>
+              <Modal isOpen={isModalOpen} onClose={toggleModal} />
+              <div className={styles.title}>
+                <div className={styles.titleLeft}>
+                  <img src="/images/m.svg" className={styles.titleImage} />
+                  <p className={styles.titleText}>
+                    DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+                  </p>
+                </div>
+
+                <div className={styles.connected}>
+                  <ConnectButton />
+                </div>
+              </div>
+              <Display />
+              <OtherItems />
+            </div>
+          )}
+        </SnackbarProvider>
       </div>
     </NoSSR>
   );

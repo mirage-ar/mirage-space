@@ -81,3 +81,7 @@
   width: 3px;
   cursor: pointer;
 }
+
+.north {
+  padding-right: 1px;
+}
