@@ -5,6 +5,13 @@ import Timer from "../../components/utils/Timer";
 import styles from "./Display.module.css";
 import Mapbox from "../mapbox/Mapbox";
 import Description from "../description/Description";
+import dynamic from 'next/dynamic'
+
+const ModelViewer = dynamic(
+  () => import('../../components/model/ModelViewer'),
+  { ssr: false }
+)
+
 
 const Display: React.FC = () => {
   const { items, contract, defaultItem, isMobileView } =
@@ -19,7 +26,7 @@ const Display: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.topHalf}>
             <div className={styles.piece}>
-              <img src="/images/golden_queen.png" />
+              <ModelViewer/>
             </div>
             <div className={styles.drop}>
               <p>DROP</p>
@@ -46,8 +53,7 @@ const Display: React.FC = () => {
             <div className={styles.address}>
               <p className={styles.addressTitle}>CONTRACT ADDRESS</p>
               <p className={styles.addressLink}>
-                {formatAddress(mirage.token.contractAddress)}{" "}
-                <img src="/images/navigate.svg" />
+                {formatAddress(contract)} <img src="/images/navigate.svg" />
               </p>
             </div>
           </div>
@@ -78,23 +84,19 @@ const Display: React.FC = () => {
             </div>
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>CONTRACT ADDRESS</p>
-                <p>{formatAddress(contract)}</p>
+              <p>{formatAddress(contract)}</p>
             </div>
             <Mapbox />
             <Description />
           </div>
           <div className={styles.desktopRightContent}>
             <div className={styles.desktopPiece}>
-              <img
-                src="/images/golden_queen.png"
-                className={styles.desktopPiecePlacement}
-              />
+              <ModelViewer/>
             </div>
             <div className={styles.desktopPieceInfo}>
               <p>DROP</p>
               <img src="/images/drop.svg" className={styles.desktopDropImage} />
-              {/* TODO: decide if piece needs to rotate or not
-              <img src="/images/360.svg" className={styles.desktopRotation} /> */}
+              <img src="/images/360.svg" className={styles.desktopRotation} />
             </div>
           </div>
         </div>

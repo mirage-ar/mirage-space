@@ -6,7 +6,9 @@
  * @param {string} address - the address to be shortened
  * @return {string} - shortened address
  */
-export const formatAddress = (address: string) => {
+export const formatAddress = (address: string | null) => {
+  if (address === null) return;
+  
   const length = address.length;
   return `${address.substring(0, 5)}...${address.substring(
     length - 4,

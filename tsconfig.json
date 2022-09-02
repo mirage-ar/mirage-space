@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/model/ModelViewer.js", "components/model/ModelViewer.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -11,7 +11,7 @@
 }
 
 .piece {
-  width: 340px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,11 +19,6 @@
   /* border-right-color: grey ;
     border-right-width: 1px;
     border-right-style: solid; */
-}
-
-.piece img {
-  width: 268px;
-  height: 366px;
 }
 
 .drop {
