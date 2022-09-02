@@ -5,7 +5,6 @@ import Timer from "../../components/utils/Timer";
 import styles from "./Display.module.css";
 import Mapbox from "../mapbox/Mapbox";
 import Description from "../description/Description";
-import Address from "../../components/utils/Address";
 
 const Display: React.FC = () => {
   const { items, contract, defaultItem, isMobileView } =
@@ -79,7 +78,7 @@ const Display: React.FC = () => {
             </div>
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>CONTRACT ADDRESS</p>
-              <Address />
+                <p>{formatAddress(contract)}</p>
             </div>
             <Mapbox />
             <Description />

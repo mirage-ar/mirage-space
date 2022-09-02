@@ -60,7 +60,15 @@ const MintButton: React.FC = () => {
   const hasClaimedMirage = items.find((item) => {
     return (
       item.token?.tokenId === null &&
-      item.token?.contractAddress.toUpperCase() === contract.toUpperCase() &&
+      item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
+      item.user?.wallet.toUpperCase() === address?.toUpperCase()
+    );
+  });
+
+  const hasMinted = items.find((item) => {
+    return (
+      item.token?.tokenId !== null &&
+      item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
       item.user?.wallet.toUpperCase() === address?.toUpperCase()
     );
   });
@@ -73,7 +81,7 @@ const MintButton: React.FC = () => {
     );
   }
 
-  if (isSuccess) {
+  if (isSuccess || hasMinted) {
     return (
       <button className={styles.success} onClick={toggleModal}>
         <img src="/images/check.svg" />
