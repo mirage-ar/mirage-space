@@ -19,6 +19,7 @@ const MintButton: React.FC = () => {
     transactionHash,
     setTransactionHash,
     items,
+    contract,
   } = useApplicationContext();
 
   const { config } = usePrepareContractWrite({
@@ -59,6 +60,7 @@ const MintButton: React.FC = () => {
   const hasClaimedMirage = items.find((item) => {
     return (
       item.token?.tokenId === null &&
+      item.token?.contractAddress.toUpperCase() === contract.toUpperCase() &&
       item.user?.wallet.toUpperCase() === address?.toUpperCase()
     );
   });
