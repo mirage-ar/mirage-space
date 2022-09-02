@@ -32,17 +32,6 @@
   margin: 0px;
 }
 
-.cta {
-  color: #42ff60;
-  font-size: 13px;
-  width: 428px;
-  height: 45px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
 .buttonContainer {
   display: flex;
   flex-direction: row;

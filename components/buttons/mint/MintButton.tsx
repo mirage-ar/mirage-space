@@ -55,6 +55,14 @@ const MintButton: React.FC = () => {
     setOpenModal,
   ]);
 
+  // if wallet connected + user has claimed mirage -> show mint button
+  const hasClaimedMirage = items.find((item) => {
+    return (
+      item.token?.tokenId === null &&
+      item.user?.wallet.toUpperCase() === address?.toUpperCase()
+    );
+  });
+
   if (isLoading) {
     return (
       <div className={styles.loading}>
@@ -71,14 +79,6 @@ const MintButton: React.FC = () => {
     );
   }
 
-  // if wallet connected + user has claimed mirage -> show mint button
-  const hasClaimedMirage = items.find((item) => {
-    return (
-      item.token?.tokenId === null &&
-      item.user?.wallet.toUpperCase() === address?.toUpperCase()
-    );
-  });
-
   if (hasClaimedMirage) {
     return (
       <button
@@ -94,18 +94,23 @@ const MintButton: React.FC = () => {
   if (isConnected) {
     return (
       <>
-        <div> Claim Mirage to mint...</div>
-        <button className={styles.click} disabled={true}>
-          MINT
-        </button>
+        <div className={styles.mintContainer}>
+          <div className={styles.cta}>Claim a Mirage to mint...</div>{" "}
+          <button className={styles.click} disabled={true}>
+            MINT
+          </button>
+        </div>
       </>
     );
   }
 
   return (
-    <button className={styles.click} onClick={toggleModal}>
-      CONNECT WALLET
-    </button>
+    <div className={styles.mintContainer}>
+      <div className={styles.cta}>Connect wallet to mint...</div>{" "}
+      <button className={styles.click} onClick={toggleModal}>
+        CONNECT WALLET
+      </button>
+    </div>
   );
 };
 
