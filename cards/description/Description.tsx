@@ -21,7 +21,7 @@ const Description: React.FC = () => {
               location, etc
             </p>
           </div>
-          <div className={styles.cta}>Connect Wallet to mint</div>
+          <div className={styles.cta}>Claim a Mirage and connect wallet to mint!</div>
           <div className={styles.buttonContainer}>
             <MintButton />
           </div>
