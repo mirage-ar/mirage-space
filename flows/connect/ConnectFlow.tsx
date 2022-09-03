@@ -3,9 +3,11 @@ import { useConnect, useAccount } from "wagmi";
 import styles from "./ConnectFlow.module.css";
 import Loading from "../../components/loading/Loading";
 import Successful from "../../components/successful/Successful";
+import { useApplicationContext } from "../../state/context";
 
 const ConnectFlow: React.FC = () => {
   const { connect, connectors, error, isLoading } = useConnect();
+  const { isMobileView } = useApplicationContext();
 
   const { isConnected } = useAccount();
 
@@ -17,22 +19,25 @@ const ConnectFlow: React.FC = () => {
             <Loading />
           ) : (
             <>
-              {connectors.map((connector) => (
-                <button
-                  className={styles.connect}
-                  disabled={!connector.ready}
-                  key={connector.id}
-                  onClick={() => connect({ connector })}
-                >
-                  <p>{connector.name.toUpperCase()}</p>{" "}
-                  {connector.name === "MetaMask" ? (
-                    <img src="/images/metamask.svg" />
-                  ) : (
-                    <img src="/images/walletconnect.png" />
-                  )}
-                  {!connector.ready}
-                </button>
-              ))}
+              {connectors.map((connector) => {
+                if (isMobileView && connector.name === "MetaMask") return;
+                return (
+                  <button
+                    className={styles.connect}
+                    disabled={!connector.ready}
+                    key={connector.id}
+                    onClick={() => connect({ connector })}
+                  >
+                    <p>{connector.name.toUpperCase()}</p>{" "}
+                    {connector.name === "MetaMask" ? (
+                      <img src="/images/metamask.svg" />
+                    ) : (
+                      <img src="/images/walletconnect.png" />
+                    )}
+                    {!connector.ready}
+                  </button>
+                );
+              })}
 
               <button className={styles.info}>
                 <p>GET A WALLET</p>
