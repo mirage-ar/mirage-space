@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
               <div className={styles.title}>
                 <div className={styles.titleLeft}>
-                  <img src="/images/m.svg" className={styles.titleImage} />
+                  <img src="/images/logo.svg" className={styles.titleImage} />
                   <p className={styles.titleText}>
                     DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
                   </p>
