@@ -21,8 +21,8 @@ const MintFlow: React.FC = () => {
             MIRAGE APP
           </a>
         )}
-        <a href={`https://testnets.opensea.io/assets/rinkeby/${contract}`} className={styles.info}>OPENSEA</a>
-        <a href={`https://rinkeby.etherscan.io/address/${contract}`} className={styles.info}>ETHERSCAN</a>
+        <a href={`https://testnets.opensea.io/assets/rinkeby/${contract}`} className={styles.info}> OPENSEA </a>
+        <a href={`https://rinkeby.etherscan.io/address/${contract}`} className={styles.info}> ETHERSCAN </a>
       </div>
     </div>
   );

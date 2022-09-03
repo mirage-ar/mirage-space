@@ -26,12 +26,17 @@
 }
 
 .info {
-  width: 179px;
   height: 45px;
-  border-radius: 60px;
+  width: 179px;
   border: 1.5px solid #222222;
-  font-size: 13px;
+  color: #222222;
   background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
   cursor: pointer;
 }
 
