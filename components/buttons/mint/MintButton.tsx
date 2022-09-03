@@ -9,8 +9,6 @@ import {
 
 import styles from "./MintButton.module.css";
 import { CONTRACT } from "./contract";
-import client from "../../../state/graph";
-import { gql } from "@apollo/client";
 
 const MintButton: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
