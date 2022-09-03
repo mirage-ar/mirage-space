@@ -1,5 +1,5 @@
 import React from "react";
-import { useWaitForTransaction } from "wagmi";
+import { useWaitForTransaction, useAccount, useDisconnect } from "wagmi";
 import ConnectFlow from "../../flows/connect/ConnectFlow";
 import MintFlow from "../../flows/mint/MintFlow";
 import { useApplicationContext } from "../../state/context";
@@ -18,6 +18,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     hash: transactionHash,
   });
   const { isMobileView } = useApplicationContext();
+
+  const { isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
 
   const handleCloseOnOverlay = (
     e: React.MouseEvent<HTMLElement, MouseEvent>
@@ -47,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <div className={styles.connected}>
                 <img src={"/images/live.svg"} />
                 <p>
-                  CONNECTED AS <Address />
+                  CONNECTED AS <Address /> | {isConnected && <a style={{cursor: "pointer"}} onClick={() => disconnect()}>Disconnect</a>}
                 </p>
                 <button className={styles.modalClose} onClick={onClose}>
                   <img src={"/images/close.svg"} alt={"close modal"} />
