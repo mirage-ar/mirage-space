@@ -82,7 +82,11 @@ export const getServerSideProps = async ({ req }) => {
 
   const { data } = await client.query({
     query: allItems,
+    fetchPolicy: "no-cache",
   });
+
+  console.log("- APOLLO DATA -");
+  console.log(data);
 
   return {
     props: {

@@ -9,6 +9,8 @@ import {
 
 import styles from "./MintButton.module.css";
 import { CONTRACT } from "./contract";
+import client from "../../../state/graph";
+import { gql } from "@apollo/client";
 
 const MintButton: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -23,7 +25,7 @@ const MintButton: React.FC = () => {
   } = useApplicationContext();
 
   const { config } = usePrepareContractWrite({
-    addressOrName: "0x707053274D1f443f62AAaD6FE28b82e7CB1D370e",
+    addressOrName: contract,
     contractInterface: CONTRACT.abi,
     functionName: "safeMint",
     args: [address],
@@ -44,6 +46,7 @@ const MintButton: React.FC = () => {
     if (isSuccess && !isModalOpen && !openModal) {
       setOpenModal(true);
       toggleModal();
+      // updateCache();
     }
   }, [
     data?.hash,
@@ -57,21 +60,38 @@ const MintButton: React.FC = () => {
   ]);
 
   // if wallet connected + user has claimed mirage -> show mint button
-  const hasClaimedMirage = items.find((item) => {
-    return (
-      item.token?.tokenId === null &&
-      item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
-      item.user?.wallet.toUpperCase() === address?.toUpperCase()
-    );
+  const hasClaimedMirage = items.find((item): boolean => {
+    if (item.user && item.token) {
+      return (
+        item.token?.tokenId === null &&
+        item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
+        item.user?.wallet.toUpperCase() === address?.toUpperCase()
+      );
+    }
+    return false;
   });
 
-  const hasMinted = items.find((item) => {
-    return (
-      item.token?.tokenId !== null &&
-      item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
-      item.user?.wallet.toUpperCase() === address?.toUpperCase()
-    );
+  const hasMinted = items.find((item): boolean => {
+    if (item.user && item.token) {
+      return (
+        item.token?.tokenId !== null &&
+        item.token?.contractAddress.toUpperCase() === contract?.toUpperCase() &&
+        item.user?.wallet.toUpperCase() === address?.toUpperCase()
+      );
+    }
+    return false;
   });
+
+  if (!contract) {
+    return (
+      <div className={styles.mintContainer}>
+        <div className={styles.cta}>Please visit a contract page to mint</div>{" "}
+        <button className={styles.click} onClick={toggleModal}disabled={true}>
+          Mint
+        </button>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (

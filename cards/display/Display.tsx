@@ -30,7 +30,7 @@ const Display: React.FC = () => {
             </div>
             <div className={styles.drop}>
               <p>DROP</p>
-              <img src="/images/drop.svg" />
+              <img src="/images/0000.svg" />
             </div>
           </div>
           <div className={styles.bottomHalf}>
@@ -95,8 +95,8 @@ const Display: React.FC = () => {
             </div>
             <div className={styles.desktopPieceInfo}>
               <p>DROP</p>
-              <img src="/images/drop.svg" className={styles.desktopDropImage} />
-              <img src="/images/360.svg" className={styles.desktopRotation} />
+              <img src="/images/0000.svg" className={styles.desktopDropImage} />
+              {/* <img src="/images/360.svg" className={styles.desktopRotation} /> */}
             </div>
           </div>
         </div>
