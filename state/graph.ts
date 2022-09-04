@@ -48,7 +48,7 @@ export const authorizeUser = gql`
 `;
 
 const client = new ApolloClient({
-  uri: "https://37go84pa77.execute-api.us-east-1.amazonaws.com",
+  uri: "https://graph.protocol.im",
   cache: new InMemoryCache(),
 });
 
