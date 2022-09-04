@@ -14,7 +14,8 @@
 }
 
 .title {
-  width: 1408px;
+  width: 93%;
+  min-width: 800px;
   height: 82px;
   display: flex;
   flex-direction: row;
@@ -28,10 +29,6 @@
   font-family: "helvetica-Monospaced";
 }
 
-.connected {
-  padding-left: 672px;
-}
-
 .titleImage {
   padding-right: 16.64px;
   width: 88px;
@@ -40,6 +37,7 @@
 
 .titleLeft {
   display: flex;
+  width: 1200px;
 }
 
 .video {

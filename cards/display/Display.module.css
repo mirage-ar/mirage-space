@@ -126,7 +126,8 @@
 
 .desktopContainer {
   background-color: black;
-  width: 1408px;
+  width: 93%;
+  min-width: 800px;
   height: 900px;
   display: flex;
   flex-direction: row;
@@ -141,6 +142,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 2%;
 }
 
 .desktopDisplayTitle {
@@ -164,8 +166,8 @@
 }
 
 .desktopRightContent {
-  margin-left: 100px;
-  width: 815px;
+  margin-left: 4%;
+  width: 55%;
   height: 815px;
   background-image: url("/images/desktopDisplayBackground.svg");
   display: flex;
@@ -173,12 +175,12 @@
 }
 
 .desktopPiece {
-  width: 712px;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding-left: 103px;
+  /* padding-left: 103px; */
   padding-top: 45px;
 }
 
@@ -201,8 +203,4 @@
 .desktopRotation {
   padding-top: 300px;
   width: 24px;
-}
-
-.desktopPiecePlacement {
-  width: 450px;
 }
