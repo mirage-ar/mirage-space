@@ -1,6 +1,7 @@
 .container {
   background-color: black;
-  width: 428px;
+  width: 100%;
+  max-width: 430px;
   height: 317px;
   margin: -1px;
   display: flex;
@@ -12,14 +13,14 @@
   border-bottom: var(--line);
   color: white;
   font-size: 10px;
-  width: 400px;
+  width: 90%;
   padding: 0px 0px 10px 0px;
 }
 
 .miniViews {
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 400px;
+  width: 90%;
   height: 317px;
   white-space: nowrap;
   display: flex;

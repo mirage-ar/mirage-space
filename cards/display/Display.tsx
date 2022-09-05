@@ -35,7 +35,7 @@ const Display: React.FC = () => {
           </div>
           <div className={styles.bottomHalf}>
             <div className={styles.name}>
-              <p>{mirage.name.toUpperCase()}</p>
+              <p className={styles.nameTitle}>{mirage.name.toUpperCase()}</p>
               <p>BY @{mirage.artist.handle.toUpperCase()}</p>
             </div>
             <div className={styles.price}>
