@@ -30,7 +30,7 @@ function dmsString(deg: number, lng: boolean): string {
     dir: deg < 0 ? (lng ? "W" : "S") : lng ? "E" : "N",
     deg: d,
     min: m,
-    sec: s,
+    sec: s.toFixed(0),
   };
   return `${dms.deg}\u00B0${dms.min}'${dms.sec}"${dms.dir}`;
 }
@@ -41,7 +41,7 @@ const Mapbox: React.FC = () => {
   const marker = useRef(null);
   const snackbar = useSnackbar();
 
-  const { items, contract, defaultItem } = useApplicationContext();
+  const { items, contract, defaultItem, isMobileView } = useApplicationContext();
   const mirage =
     items.find((item) => item.token.contractAddress == contract) || defaultItem;
 
@@ -63,7 +63,7 @@ const Mapbox: React.FC = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${mirage.latitude}, ${mirage.longitude}`);
-    snackbar.showMessage("Copied!");
+    snackbar.showMessage("location copied to clipboard");
   };
 
   return (
@@ -71,18 +71,25 @@ const Mapbox: React.FC = () => {
       <div className={styles.location}>
         <img src="/images/target.svg" /> NEW YORK CITY
       </div>
-      <div className={styles.navigate}>
-        <div className={styles.navigateContent}>
-          <p>NAVIGATE IN APP</p> <img src="/images/hexSquareThing.svg" />
+      <div className={styles[isMobileView ? "buttonContainerMobile" : "buttonContainer"]}>
+        <div className={styles.navigate}>
+          <a
+            href={`${isMobileView ? `mirage://navigate:${contract}` : "#"}`}
+            className={styles[isMobileView ? "navigateContent" : "navigateContentDisabled"]}
+          >
+            <p>NAVIGATE IN APP</p>
+            <img src="/images/hexSquareThing.svg" />
+          </a>
         </div>
-      </div>
-      <div className={styles.position}>
-        <div className={styles.positionContent}>
-          <p className={styles.north}> {dmsString(mirage.latitude, false)} </p>
-          <p> {dmsString(mirage.longitude, true)}</p>{" "}
-          <button className={styles.copy} onClick={copyToClipboard}>
+        <div className={styles.position}>
+          <a className={styles.positionContent} onClick={copyToClipboard}>
+            <p>
+              {dmsString(mirage.latitude, false)}{" "}
+              {dmsString(mirage.longitude, true)}
+            </p>
+
             <img src="/images/stack.svg" />
-          </button>
+          </a>
         </div>
       </div>
       <div ref={mapContainer} className={styles.mapContainer}></div>

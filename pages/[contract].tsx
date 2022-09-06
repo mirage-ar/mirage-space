@@ -30,16 +30,17 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
     setMobileView(isMobileView);
     setItems(items);
     setContract(contract);
+
+    if (!contract.includes("0x")) {
+      router.replace(`/${contract}`, `/`);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <NoSSR>
-      <div>
+      <div className={styles[isMobileView ? "containerNoVideo" : "container"]}>
         <SnackbarProvider SnackbarProps={{ autoHideDuration: 4000 }}>
-          <video autoPlay muted loop className={styles.video}>
-            <source src="/videos/back.mp4" />
-          </video>
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
@@ -50,23 +51,28 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
               <OtherItems />
             </div>
           ) : (
-            <div className={styles.desktopContainer}>
-              <Modal isOpen={isModalOpen} onClose={toggleModal} />
-              <div className={styles.title}>
-                <div className={styles.titleLeft}>
-                  <img src="/images/logo.svg" className={styles.titleImage} />
-                  <p className={styles.titleText}>
-                    DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
-                  </p>
-                </div>
+            <>
+              <video autoPlay muted loop className={styles.video}>
+                <source src="/videos/back.mp4" />
+              </video>
+              <div className={styles.desktopContainer}>
+                <Modal isOpen={isModalOpen} onClose={toggleModal} />
+                <div className={styles.title}>
+                  <div className={styles.titleLeft}>
+                    <img src="/images/logo.svg" className={styles.titleImage} />
+                    <p className={styles.titleText}>
+                      DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
+                    </p>
+                  </div>
 
-                <div className={styles.connected}>
-                  <ConnectButton />
+                  <div className={styles.connected}>
+                    <ConnectButton />
+                  </div>
                 </div>
+                <Display />
+                <OtherItems />
               </div>
-              <Display />
-              <OtherItems />
-            </div>
+            </>
           )}
         </SnackbarProvider>
       </div>

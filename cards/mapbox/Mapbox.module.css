@@ -10,9 +10,38 @@
   height: 264px;
 }
 
-.position {
+.buttonContainer {
+  position: absolute;
+  z-index: 1;
+  margin-top: 190px;
+  width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttonContainerMobile {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 190px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttonContainer img {
+  height: 13px
+}
+
+.disabled {
+  color: grey;
+}
+
+/* classes can share the same content */
+.position, .navigate { 
   color: white;
-  width: 195px;
+  width: 45%;
   height: 32px;
   font-size: 10px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -20,80 +49,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  margin-top: 190px;
-  margin-left: 16px;
-  z-index: 100;
 }
 
-.positionContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 165px;
-}
-
-.navigate {
-  color: white;
-  width: 195px;
-  height: 32px;
-  font-size: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin-top: 190px;
-  margin-left: 217px;
-  z-index: 100;
-}
-
-.navigate img {
-    padding-left: 3px;
-}
-
-.navigateContent {
+.positionContent, .navigateContent {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 115px;
+  padding: 0 2px;
+
+  border: none;
+  background: none;
+  cursor: crosshair;
+  color: white;
+}
+
+.navigateContentDisabled {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.positionContent, .navigateContent p {
+  width: 140px;
+  text-align: center;
+}
+
+.navigateContentDisabled p {
+  width: 140px;
+  text-align: center;
+  color: #565656;
 }
 
 .location {
-    color: white;
-    font-size: 11px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: absolute;
-    margin: 8px 0px 0px 15px;
-    z-index: 100;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  margin: 8px 0px 0px 15px;
+  z-index: 100;
 }
 
 .location img {
-    padding-right: 8px;
+  height: 20px;
+  padding-right: 8px;
 }
 
-.copy {
-  border: none;
-  background: none;
-  width: 3px;
-  cursor: pointer;
-}
-
-.north {
-  padding-right: 1px;
-}
-
-@media only screen and (max-width: 393px) {
+/* @media only screen and (max-width: 393px) {
   .position {
     color: white;
     width: 160px;
     height: 32px;
-    font-size: 9px;
+    font-size: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 40px;
     display: flex;
@@ -104,7 +119,7 @@
     margin-left: 10px;
     z-index: 100;
   }
-  
+
   .positionContent {
     display: flex;
     flex-direction: row;
@@ -114,14 +129,14 @@
   }
 
   .positionContent img {
-    width: 15px;
+    height: 12px;
   }
-  
+
   .navigate {
     color: white;
     width: 160px;
     height: 32px;
-    font-size: 9px;
+    font-size: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 40px;
     display: flex;
@@ -132,12 +147,12 @@
     margin-left: 200px;
     z-index: 100;
   }
-  
+
   .navigate img {
-      width: 15px;
-      padding-left: 3px;
+    height: 100%;
+    padding-left: 3px;
   }
-  
+
   .navigateContent {
     display: flex;
     flex-direction: row;
@@ -145,4 +160,4 @@
     justify-content: space-between;
     width: 115px;
   }
-}
+} */
