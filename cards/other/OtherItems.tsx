@@ -16,7 +16,7 @@ const OtherItems: React.FC = () => {
         {items.map((item) => {
           // only return original pieces
           if (
-            item.token.tokenId == "0" &&
+            item.token?.tokenId == "0" &&
             item.token.contractAddress != contract
           ) {
             return <MiniView key={item.id} item={item} />;
