@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useConnect, useAccount } from "wagmi";
 import styles from "./ConnectFlow.module.css";
 import Loading from "../../components/loading/Loading";

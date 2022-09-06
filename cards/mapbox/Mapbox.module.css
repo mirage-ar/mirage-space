@@ -22,7 +22,7 @@
 
 .buttonContainerMobile {
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   margin-top: 190px;
   width: 100%;
   display: flex;
