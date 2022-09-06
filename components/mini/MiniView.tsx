@@ -3,16 +3,22 @@ import { useApplicationContext } from "../../state/context";
 import { Mirage } from "../../state/types";
 import styles from "./MiniView.module.css";
 import Timer from "../utils/Timer";
+import { useRouter } from "next/router";
 
 interface MiniProps {
   item: Mirage;
 }
 
 const MobileMini: React.FC<MiniProps> = ({ item }) => {
-  const { isMobileView } = useApplicationContext();
+  const router = useRouter();
+  const { isMobileView, contract } = useApplicationContext();
+
+  const navigateToItem = (item: Mirage) => {
+    router.replace(`/${contract}`, `/${item.token.contractAddress}`);
+  };
 
   return (
-    <div className={styles[isMobileView ? "container" : "desktopContainer"]}>
+    <div className={styles[isMobileView ? "container" : "desktopContainer"]} onClick={() => navigateToItem(item)}>
       <div className={styles[isMobileView ? "background" : "desktopBackground"]} >
         <img src="/images/golden_queen.png" />
       </div>

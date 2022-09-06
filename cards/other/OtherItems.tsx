@@ -5,8 +5,7 @@ import MiniView from "../../components/mini/MiniView";
 import { useApplicationContext } from "../../state/context";
 
 const OtherItems: React.FC = () => {
-  const { isMobileView, items } =
-    useApplicationContext();
+  const { isMobileView, items, contract } = useApplicationContext();
 
   return (
     <div className={styles[isMobileView ? "container" : "desktopContainer"]}>
@@ -14,9 +13,15 @@ const OtherItems: React.FC = () => {
         VIEW OTHER PIECES
       </div>
       <div className={styles[isMobileView ? "miniViews" : "desktopMiniViews"]}>
-        {items.map((item) => (
-            <MiniView key={item.id} item={item} />
-        ))}
+        {items.map((item) => {
+          // only return original pieces
+          if (
+            item.token.tokenId == "0" &&
+            item.token.contractAddress != contract
+          ) {
+            return <MiniView key={item.id} item={item} />;
+          }
+        })}
       </div>
     </div>
   );
