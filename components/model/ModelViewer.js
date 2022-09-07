@@ -1,11 +1,11 @@
 import "@google/model-viewer";
 
-const ModelViewer = () => (
+const ModelViewer = ({ assetUri }) => (
   <div id="card">
     <model-viewer
-      src="/assets/models/head.glb"
-      ios-src=""
-      poster="/assets/images/head.png"
+      src={`/assets/models/${assetUri}.glb`}
+      ios-src={`/assets/models/${assetUri}.usdz`}
+      poster={`/assets/images/${assetUri}.png`}
       alt="Mirage 3D Model"
       camera-controls
       auto-rotate

@@ -21,7 +21,8 @@ interface ApplicationContext {
 // TODO: !add loading states instead of default mirage
 const defaultItem: Mirage = {
   id: "0",
-  name: "Rebased",
+  name: "Head",
+  assetUri: "head",
   latitude: 40.777,
   longitude: -73.97,
   elevation: 0,

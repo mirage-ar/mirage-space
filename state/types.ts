@@ -1,6 +1,7 @@
 export interface Mirage {
     id: string;
     name: string;
+    assetUri: string;
     latitude: number;
     longitude: number;
     elevation: number;

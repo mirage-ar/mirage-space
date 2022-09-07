@@ -26,7 +26,7 @@ const Display: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.topHalf}>
             <div className={styles.piece}>
-              <ModelViewer/>
+              <ModelViewer assetUri={mirage.assetUri}/>
             </div>
             <div className={styles.drop}>
               <p>DROP</p>
@@ -91,7 +91,7 @@ const Display: React.FC = () => {
           </div>
           <div className={styles.desktopRightContent}>
             <div className={styles.desktopPiece}>
-              <ModelViewer/>
+              <ModelViewer assetUri={mirage.assetUri}/>
             </div>
             <div className={styles.desktopPieceInfo}>
               <p>DROP</p>

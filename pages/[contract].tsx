@@ -91,8 +91,8 @@ export const getServerSideProps = async ({ req }) => {
     fetchPolicy: "no-cache",
   });
 
-  console.log("- APOLLO DATA -");
-  console.log(data);
+  // console.log("- APOLLO DATA -");
+  // console.log(data);
 
   return {
     props: {
