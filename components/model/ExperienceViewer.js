@@ -11,7 +11,7 @@ const ExperienceViewer = ({ contractAddress }) => (
       camera-controls
       auto-rotate
       ar
-    ></model-viewer>
+    ><div slot="poster"></div></model-viewer>
   </div>
 );
 
