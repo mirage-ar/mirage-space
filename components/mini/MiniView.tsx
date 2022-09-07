@@ -20,7 +20,7 @@ const MobileMini: React.FC<MiniProps> = ({ item }) => {
   return (
     <div className={styles[isMobileView ? "container" : "desktopContainer"]} onClick={() => navigateToItem(item)}>
       <div className={styles[isMobileView ? "background" : "desktopBackground"]} >
-        <img src="/images/golden_queen.png" />
+        <img src={`assets/images/${item.assetUri}.png`} />
       </div>
       <div className={styles.pieceInfo}>
         <div className={styles[isMobileView ? "pieceName" : "desktopPieceName"]} >
