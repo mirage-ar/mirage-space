@@ -123,8 +123,8 @@ const MintButton: React.FC = () => {
     return (
       <>
         <div className={styles.mintContainer}>
-          <div className={styles.cta}>Claim a Mirage to mint...</div>{" "}
-          <button className={styles.click} disabled={true}>
+          <div className={styles.cta}>Claim a Mirage to mint.</div>
+          <button className={styles.click} disabled>
             MINT
           </button>
         </div>
