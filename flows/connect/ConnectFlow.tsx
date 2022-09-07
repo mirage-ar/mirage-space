@@ -38,10 +38,15 @@ const ConnectFlow: React.FC = () => {
                   </button>
                 );
               })}
-
-              <button className={styles.info}>
-                <p>GET A WALLET</p>
-              </button>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className={styles.info}>
+                  <p>GET A WALLET</p>
+                </button>
+              </a>
             </>
           )}
           {error && <div className={styles.errorMessage}>{error.message}</div>}
