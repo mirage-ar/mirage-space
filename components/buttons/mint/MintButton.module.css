@@ -88,3 +88,18 @@
     justify-content: center;
     width: 500px;
   }
+
+  .noClick {
+    background-color: white;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 0 80px;
+    border-radius: 40px;
+    border: none;
+    color: grey;
+    width: 90%;
+  }

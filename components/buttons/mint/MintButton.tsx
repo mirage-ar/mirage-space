@@ -124,7 +124,7 @@ const MintButton: React.FC = () => {
       <>
         <div className={styles.mintContainer}>
           <div className={styles.cta}>Claim a Mirage to mint.</div>
-          <button className={styles.click} disabled>
+          <button className={styles.noClick}>
             MINT
           </button>
         </div>
