@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./OtherItems.module.css";
 import MiniView from "../../components/mini/MiniView";
 import { useApplicationContext } from "../../state/context";
+import { isSameAddress } from "../../components/utils/functions";
 
 const OtherItems: React.FC = () => {
   const { isMobileView, items, contract } = useApplicationContext();
@@ -17,7 +18,7 @@ const OtherItems: React.FC = () => {
           // only return original pieces
           if (
             item.token?.tokenId == "0" &&
-            item.token.contractAddress != contract
+            !isSameAddress(item.token.contractAddress, contract)
           ) {
             return <MiniView key={item.id} item={item} />;
           }

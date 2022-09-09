@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import styles from "./Mapbox.module.css";
 import { useApplicationContext } from "../../state/context";
 import { useSnackbar } from "material-ui-snackbar-provider";
+import { isSameAddress } from "../../components/utils/functions";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmlpZ21udCIsImEiOiJjbDBkcXRwOHcwOWw0M2RrOWMydjhpN2o3In0.I6nZZg9gLK-ozUy4zRuZdQ";
@@ -41,14 +42,15 @@ const Mapbox: React.FC = () => {
   const marker = useRef(null);
   const snackbar = useSnackbar();
 
-  const { items, contract, defaultItem, isMobileView } = useApplicationContext();
+  const { items, contract, defaultItem, isMobileView } =
+    useApplicationContext();
   const mirage =
-    items.find((item) => item.token.contractAddress == contract) || defaultItem;
+    items.find((item) => isSameAddress(item.token.contractAddress, contract)) ||
+    defaultItem;
 
-  const [zoom, setZoom] = useState(9);
+  const [zoom, setZoom] = useState(14);
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/fiigmnt/cl4evbfs6001q14lqhwnmjo11",
@@ -59,7 +61,7 @@ const Mapbox: React.FC = () => {
     new mapboxgl.Marker(marker.current)
       .setLngLat([mirage.longitude, mirage.latitude])
       .addTo(map.current);
-  });
+  }, [mirage]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${mirage.latitude}, ${mirage.longitude}`);
@@ -69,13 +71,21 @@ const Mapbox: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.location}>
-        <img src="/images/target.svg" /> NEW YORK CITY
+        <img src="/images/target.svg" /> {mirage.cityName.toUpperCase()}
       </div>
-      <div className={styles[isMobileView ? "buttonContainerMobile" : "buttonContainer"]}>
+      <div
+        className={
+          styles[isMobileView ? "buttonContainerMobile" : "buttonContainer"]
+        }
+      >
         <div className={styles.navigate}>
           <a
             href={`${isMobileView ? `mirage://navigate:${contract}` : "#"}`}
-            className={styles[isMobileView ? "navigateContent" : "navigateContentDisabled"]}
+            className={
+              styles[
+                isMobileView ? "navigateContent" : "navigateContentDisabled"
+              ]
+            }
           >
             <p>NAVIGATE IN APP</p>
             <img src="/images/hexSquareThing.svg" />

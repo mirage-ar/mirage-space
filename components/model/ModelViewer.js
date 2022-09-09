@@ -10,7 +10,12 @@ const ModelViewer = ({ assetUri }) => (
       camera-controls
       auto-rotate
       ar
-    ><div background-color="black" height="0px" slot="poster"></div></model-viewer>
+      interaction-prompt="none"
+      field-of-view="40deg"
+      // style="background-color: unset;"
+    >
+      <div background-color="black" height="0px" slot="poster"></div>
+    </model-viewer>
   </div>
 );
 

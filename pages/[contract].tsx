@@ -31,16 +31,17 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
     setItems(items);
     setContract(contract);
 
-    if (!contract.includes("0x")) {
-      router.replace(`/${contract}`, `/`);
-    }
+    // TODO: create check contract function
+    // if (!contract.includes("0x") || !contract.includes("0X")) {
+    //   router.replace(`/${contract}`, `/`);
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <NoSSR>
       <div className={styles[isMobileView ? "containerNoVideo" : "container"]}>
-        <SnackbarProvider SnackbarProps={{ autoHideDuration: 4000 }}>
+        <SnackbarProvider SnackbarProps={{ autoHideDuration: 2000 }}>
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />

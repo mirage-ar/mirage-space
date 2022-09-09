@@ -1,6 +1,6 @@
 import React from "react";
 import { useApplicationContext } from "../../state/context";
-import { formatAddress } from "../../components/utils/functions";
+import { formatAddress, isSameAddress } from "../../components/utils/functions";
 import Timer from "../../components/utils/Timer";
 import styles from "./Display.module.css";
 import Mapbox from "../mapbox/Mapbox";
@@ -18,7 +18,7 @@ const Display: React.FC = () => {
     useApplicationContext();
 
   const mirage =
-    items.find((item) => item.token.contractAddress == contract) || defaultItem;
+    items.find((item) => isSameAddress(item.token.contractAddress, contract)) || defaultItem;
 
   return (
     <>

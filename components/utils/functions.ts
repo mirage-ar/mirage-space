@@ -8,7 +8,7 @@
  */
 export const formatAddress = (address: string | null) => {
   if (address === null) return;
-  
+
   const length = address.length;
   return `${address.substring(0, 5)}...${address.substring(
     length - 4,
@@ -16,40 +16,18 @@ export const formatAddress = (address: string | null) => {
   )}`.toUpperCase();
 };
 
-function reverse(str) {
-  var newString = "";
-  for (var i = str.length - 1; i >= 0; i--) {
-    newString += str[i];
-  }
-  return newString;
-}
-
 /**
- * Returns shortened Contract or Wallet address.
+ * Checks case-insensitive equality for contract and wallet addresses
  *
- * @param {string} address - the address to be shortened
- * @return {string} - shortened address
+ * @param {string} addressOne - address to be checked
+ * @param {string} addressTwo - address to be checked
+ * @return {bool} - result
  */
-export const userAccountHash = (wallet: string, nonce: number) => {
-  //   var hash = SHA512.init()
-  //   hash.update(data: Data(wallet.utf8))
-  //   let finalize = hash.finalize()
-  //   print(finalize.description)
+export const isSameAddress = (
+  addressOne: string | null,
+  addressTwo: string | null
+): boolean => {
+  if (!addressOne || !addressTwo) return false;
 
-  // !TODO: userAccountHash - update to use SHA512
-  // for right now the hashing algo reverses the wallet and add the nonce to end
-
-  return `${reverse(wallet)}${nonce}`;
+  return addressOne.toUpperCase() === addressTwo?.toUpperCase();
 };
-
-// func userAccountHash(wallet: String, nonce: Int) -> String {
-//   var hash = SHA512.init()
-//   hash.update(data: Data(wallet.utf8))
-//   let finalize = hash.finalize()
-//   print(finalize.description)
-
-//   // !TODO: userAccountHash - update to use SHA512
-//   // for right now the hashing algo reverses the wallet and add the nonce to end
-//   let reversed = String(wallet.reversed())
-//   return "\(reversed)\(nonce)"
-// }
