@@ -31,7 +31,7 @@ const MintButton: React.FC = () => {
 
   const { data, write } = useContractWrite(config);
 
-  const { isLoading, isSuccess } = useWaitForTransaction({
+  const { isLoading, isSuccess, isError } = useWaitForTransaction({
     hash: data?.hash,
   });
 
@@ -84,7 +84,7 @@ const MintButton: React.FC = () => {
     return (
       <div className={styles.mintContainer}>
         <div className={styles.cta}>Please visit a contract page to mint</div>{" "}
-        <button className={styles.click} onClick={toggleModal}disabled={true}>
+        <button className={styles.click} onClick={toggleModal} disabled={true}>
           Mint
         </button>
       </div>
@@ -109,13 +109,16 @@ const MintButton: React.FC = () => {
 
   if (hasClaimedMirage) {
     return (
-      <button
-        className={styles.click}
-        disabled={!write}
-        onClick={() => write?.()}
-      >
-        MINT
-      </button>
+      <div className={styles.mintContainer}>
+        { isError && <div className={styles.ctaFail}>There was a transaction error, please try again.</div>}
+        <button
+          className={styles.click}
+          disabled={!write}
+          onClick={() => write?.()}
+        >
+          MINT
+        </button>
+      </div>
     );
   }
 
@@ -124,9 +127,7 @@ const MintButton: React.FC = () => {
       <>
         <div className={styles.mintContainer}>
           <div className={styles.cta}>Claim a Mirage to mint.</div>
-          <button className={styles.noClick}>
-            MINT
-          </button>
+          <button className={styles.noClick}>MINT</button>
         </div>
       </>
     );

@@ -103,3 +103,14 @@
     color: grey;
     width: 90%;
   }
+
+  .ctaFail {
+    color: red;
+    font-size: 13px;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
