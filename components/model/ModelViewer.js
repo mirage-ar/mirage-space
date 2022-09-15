@@ -12,6 +12,7 @@ const ModelViewer = ({ assetUri }) => (
       ar
       interaction-prompt="none"
       field-of-view="40deg"
+      loading="eager"
       // style="background-color: unset;"
     >
       <div background-color="black" height="0px" slot="poster"></div>

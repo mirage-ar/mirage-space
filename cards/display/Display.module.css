@@ -184,6 +184,7 @@
   background-image: url("/images/desktopDisplayBackground.svg");
   display: flex;
   flex-direction: row;
+  padding-left: 15px;
 }
 
 .desktopPiece {
