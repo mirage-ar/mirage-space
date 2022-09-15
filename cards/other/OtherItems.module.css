@@ -29,6 +29,7 @@
 
 .desktopContainer {
   width: 93%;
+  max-width: 1440px;
   min-width: 800px;
   height: 600px;
   padding: 45px;

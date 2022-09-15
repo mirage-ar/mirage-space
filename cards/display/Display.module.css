@@ -138,6 +138,7 @@
 .desktopContainer {
   background-color: black;
   width: 93%;
+  max-width: 1440px;
   min-width: 800px;
   height: 900px;
   display: flex;
@@ -177,7 +178,7 @@
 }
 
 .desktopRightContent {
-  margin-left: 100px;
+  /* margin-left: 100px; */
   width: 60%;
   height: 815px;
   background-image: url("/images/desktopDisplayBackground.svg");
