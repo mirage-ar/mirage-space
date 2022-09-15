@@ -27,7 +27,7 @@ const MobileMini: React.FC<MiniProps> = ({ item }) => {
           {item.name.toUpperCase()}
         </div>
         <div className={styles[isMobileView ? "artist" : "desktopArtist"]}>
-          @{item.artist.handle.toUpperCase()}
+          {item.artist.handle.toUpperCase()}
         </div>
         {/* TODO: See below
         <div className={styles.distance}>

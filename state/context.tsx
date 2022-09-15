@@ -21,25 +21,25 @@ interface ApplicationContext {
 // TODO: !add loading states instead of default mirage
 const defaultItem: Mirage = {
   id: "0",
-  name: "Head",
+  name: "...",
   assetUri: "head",
   latitude: 40.777,
   longitude: -73.97,
   elevation: 0,
-  cityName: "New York",
+  cityName: "...",
   dropStart: new Date("2019-08-01 13:28:20.548"),
   dropEnd: new Date("2019-08-10 13:28:20.548"),
   artist: {
     id: "0",
-    name: "Fiigmnt",
-    handle: "fiigmnt",
+    name: "...",
+    handle: "...",
     icon: "",
   },
   token: {
     id: "0",
     tokenId: "0",
     contractAddress: "0x00001111",
-    mintPrice: 0.01,
+    mintPrice: 0,
   },
   user: {
     id: "0",

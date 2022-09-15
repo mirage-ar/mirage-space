@@ -36,7 +36,7 @@ const Display: React.FC = () => {
           <div className={styles.bottomHalf}>
             <div className={styles.name}>
               <p className={styles.nameTitle}>{mirage.name.toUpperCase()}</p>
-              <p>BY @{mirage.artist.handle.toUpperCase()}</p>
+              <p>BY {mirage.artist.handle.toUpperCase()}</p>
             </div>
             <div className={styles.price}>
               <p className={styles.priceTitle}>PRICE</p>
@@ -71,7 +71,7 @@ const Display: React.FC = () => {
             </div>
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>ARTIST</p>
-              <p>@{mirage.artist.handle.toUpperCase()}</p>
+              <p>{mirage.artist.handle.toUpperCase()}</p>
             </div>
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>PRICE</p>

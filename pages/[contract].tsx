@@ -28,8 +28,19 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
 
   useEffect(() => {
     setMobileView(isMobileView);
-    setItems(items);
+    // setItems(items);
     setContract(contract);
+
+    const loadData = async () => {
+      const { data } = await client.query({
+        query: allItems,
+        fetchPolicy: "no-cache",
+      });
+
+      setItems(data ? data.items : []);
+    };
+
+    loadData();
 
     // TODO: create check contract function
     // if (!contract.includes("0x") || !contract.includes("0X")) {
@@ -87,17 +98,9 @@ export const getServerSideProps = async ({ req }) => {
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
 
-  const { data } = await client.query({
-    query: allItems,
-    fetchPolicy: "no-cache",
-  });
-
-  // console.log("- APOLLO DATA -");
-  // console.log(data);
-
   return {
     props: {
-      items: data?.items,
+      items: [],
       isMobileView: Boolean(isMobileView),
       userAgent,
     },

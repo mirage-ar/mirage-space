@@ -31,7 +31,18 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
 
   useEffect(() => {
     setMobileView(isMobileView);
-    setItems(items);
+
+    const loadData = async () => {
+      const { data } = await client.query({
+        query: allItems,
+        fetchPolicy: "no-cache",
+      });
+
+      setItems(data ? data.items : []);
+    };
+
+    loadData();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -82,13 +93,9 @@ export const getServerSideProps = async ({ req }) => {
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
 
-  const { data } = await client.query({
-    query: allItems,
-  });
-
   return {
     props: {
-      items: data?.items,
+      items: [],
       isMobileView: Boolean(isMobileView),
       userAgent,
     },
