@@ -48,7 +48,7 @@ export const authorizeUser = gql`
 `;
 
 const client = new ApolloClient({
-  uri: "https://graph.protocol.im",
+  uri: process.env.NEXT_PUBLIC_GRAPH_URL,
   cache: new InMemoryCache(),
 });
 

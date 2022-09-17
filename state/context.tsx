@@ -22,7 +22,7 @@ interface ApplicationContext {
 const defaultItem: Mirage = {
   id: "0",
   name: "...",
-  assetUri: "head",
+  assetUri: "-",
   latitude: 40.777,
   longitude: -73.97,
   elevation: 0,
