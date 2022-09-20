@@ -5,20 +5,20 @@ import Timer from "../../components/utils/Timer";
 import styles from "./Display.module.css";
 import Mapbox from "../mapbox/Mapbox";
 import Description from "../description/Description";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
 const ModelViewer = dynamic(
-  () => import('../../components/model/ModelViewer'),
+  () => import("../../components/model/ModelViewer"),
   { ssr: false }
-)
-
+);
 
 const Display: React.FC = () => {
   const { items, contract, defaultItem, isMobileView } =
     useApplicationContext();
 
   const mirage =
-    items.find((item) => isSameAddress(item.token.contractAddress, contract)) || defaultItem;
+    items.find((item) => isSameAddress(item.token.contractAddress, contract)) ||
+    defaultItem;
 
   return (
     <>
@@ -91,7 +91,7 @@ const Display: React.FC = () => {
           </div>
           <div className={styles.desktopRightContent}>
             <div className={styles.desktopPiece}>
-              <ModelViewer assetUri={mirage.assetUri}/>
+              <ModelViewer assetUri={mirage.assetUri} />
             </div>
             <div className={styles.desktopPieceInfo}>
               <p>DROP</p>

@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   }, []);
 
   return (
-    <NoSSR>
+    // <NoSSR>
       <div>
         <SnackbarProvider SnackbarProps={{ autoHideDuration: 4000 }}>
           <video autoPlay muted loop className={styles.video}>
@@ -72,7 +72,6 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
                     DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
                   </p>
                 </div>
-
                 <div className={styles.connected}>
                   <ConnectButton />
                 </div>
@@ -83,7 +82,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           )}
         </SnackbarProvider>
       </div>
-    </NoSSR>
+    // </NoSSR>
   );
 };
 
