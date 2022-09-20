@@ -49,7 +49,7 @@ const defaultItem: Mirage = {
 };
 
 const defaultContext: ApplicationContext = {
-  isMobileView: false,
+  isMobileView: true,
   setMobileView: () => {},
   isModalOpen: false,
   toggleModal: () => {},
@@ -65,7 +65,7 @@ const defaultContext: ApplicationContext = {
 const Context = createContext(defaultContext);
 
 export function ApplicationProvider({ children }) {
-  const [isMobileView, setMobileView] = useState(false);
+  const [isMobileView, setMobileView] = useState(true);
   const [isModalOpen, setModalState] = useState(false);
   const [transactionHash, setTransactionHash] = useState("");
   const [items, setItems] = useState([]);
