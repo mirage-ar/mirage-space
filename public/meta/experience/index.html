@@ -1,0 +1,30 @@
+<html>
+  <body style="background-color: #000;">
+    <!-- Import the component -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+
+    <!-- Use it like any other HTML element -->
+    <model-viewer
+    id="viewer"
+      style="width: auto; height: 100%;"
+      touch-action="pan-y"
+      alt="Mirage 3D Model"
+      camera-controls
+      auto-rotate
+      ar
+      interaction-prompt="none"
+    ></model-viewer>
+
+    <script>
+      const pathname = window.location.pathname
+      const contract = pathname.substring(pathname.lastIndexOf("/") + 1).toLocaleLowerCase();
+      console.log(contract);
+      document.getElementById('viewer').src =`/meta/models/${contract}.glb`
+      document.getElementById('viewer')["ios-src"] =`/meta/models/${contract}.usdz`
+
+    </script>
+  </body>
+</html>
