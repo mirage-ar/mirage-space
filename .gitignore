@@ -33,4 +33,4 @@ yarn-error.log*
 .vercel
 
 /public/assets/models/
-/public/experience/models/
+/public/meta/models/

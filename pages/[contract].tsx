@@ -37,6 +37,8 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
         fetchPolicy: "no-cache",
       });
 
+      console.log(data);
+
       setItems(data ? data.items : []);
     };
 
@@ -50,7 +52,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   }, []);
 
   return (
-    // <NoSSR>
+    <NoSSR>
       <div className={styles[isMobileView ? "containerNoVideo" : "container"]}>
         <SnackbarProvider SnackbarProps={{ autoHideDuration: 2000 }}>
           {isMobileView ? (
@@ -88,7 +90,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           )}
         </SnackbarProvider>
       </div>
-    // </NoSSR>
+    </NoSSR>
   );
 };
 
