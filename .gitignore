@@ -34,3 +34,4 @@ yarn-error.log*
 
 /public/assets/models/
 /public/meta/models/
+/public/experience/models/
