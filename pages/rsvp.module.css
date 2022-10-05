@@ -1,0 +1,149 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background: url("/images/Prospect_Park_New_York_October_2015_003 1.png");
+  background-size: cover;
+}
+
+.topText {
+  font-family: "Redaction-Regular";
+  color: white;
+  font-size: 170px;
+  margin: 0px;
+  padding-top: 10px;
+  white-space: nowrap;
+}
+
+.bottomTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bottomTitle p {
+  font-family: "Redaction-Regular";
+  font-size: 170px;
+  margin: 0px;
+  padding-top: 30px;
+  white-space: nowrap;
+}
+
+.bottomButton {
+  height: 130px;
+  width: 650px;
+  border: white 2px solid;
+  margin: 0px;
+  margin-left: 10px;
+  color: white;
+  font-family: "Helvetica-Monospaced";
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.infoCard {
+  height: 230px;
+  width: 578px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inviteText {
+  color: white;
+  font-family: "Helvetica-Monospaced";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inviteText p {
+  margin: 0px;
+  font-size: 12px;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: var(--line);
+  width: 565px;
+}
+
+.cardTitle img {
+  padding-top: 10px;
+  width: 70px;
+}
+
+.bottomText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 570px;
+  height: 100px;
+}
+
+.leftText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    margin: 0px;
+}
+
+.times p {
+  color: white;
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 15px;
+  font-family: "Helvetica-Monospaced";
+}
+
+.activities p {
+  color: white;
+  font-size: 10px;
+  margin: 0px;
+  font-family: "Helvetica-Monospaced";
+}
+
+.rsvp {
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.rsvp p {
+  color: black;
+  font-family: "Helvetica-Monospaced";
+  font-size: 10px;
+}
+
+.rsvpContainer {
+    padding-right: 15px;
+}
+
+@media screen and (max-width: 1280px) {
+    .bottomButton {
+        width: 500px;
+      }
+}
+
+@media screen and (max-width: 428px) {
+    .container {
+        background-color: red;
+      }
+      
+}
