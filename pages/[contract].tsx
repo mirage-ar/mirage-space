@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import client, { allItems } from "../state/graph";
 import { Mirage } from "../state/types";
-import styles from "./index.module.css";
+import styles from "./contract.module.css";
 import Mapbox from "../cards/mapbox/Mapbox";
 import Description from "../cards/description/Description";
 import Display from "../cards/display/Display";
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
-              <ConnectButton />
+              <ConnectButton isLarge />
               <Display />
               <Mapbox />
               <Description />
@@ -80,7 +80,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
                   </div>
 
                   <div className={styles.connected}>
-                    <ConnectButton />
+                    <ConnectButton isLarge />
                   </div>
                 </div>
                 <Display />

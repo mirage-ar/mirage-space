@@ -49,9 +49,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <div className={styles.modalTitle}>MINT</div>
               <div className={styles.connected}>
                 <img src={"/images/live.svg"} />
-                <p>
+                <div>
                   CONNECTED AS <Address /> | {isConnected && <a style={{cursor: "pointer"}} onClick={() => disconnect()}>Disconnect</a>}
-                </p>
+                </div>
                 <button className={styles.modalClose} onClick={onClose}>
                   <img src={"/images/close.svg"} alt={"close modal"} />
                 </button>

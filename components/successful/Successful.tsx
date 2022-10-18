@@ -14,10 +14,10 @@ const Successful: React.FC = () => {
       <button className={styles.button} onClick={toggleModal}>
         <img src="/images/check.svg" />
       </button>
-      <p className={styles.connectText}>
+      <div className={styles.connectText}>
         Connected as <Address /> |{" "}
         {isConnected && <a style={{cursor: "pointer"}} onClick={() => disconnect()}>Disconnect</a>}
-      </p>
+      </div>
     </div>
   );
 };
