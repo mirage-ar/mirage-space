@@ -31,3 +31,29 @@ export const isSameAddress = (
 
   return addressOne.toUpperCase() === addressTwo?.toUpperCase();
 };
+
+export function dmsString(deg: number, lng: boolean): string {
+  var d = parseInt(deg.toString());
+  var minfloat = Math.abs((deg - d) * 60);
+  var m = Math.floor(minfloat);
+  var secfloat = (minfloat - m) * 60;
+  var s = Math.round((secfloat + Number.EPSILON) * 100) / 100;
+  d = Math.abs(d);
+
+  if (s == 60) {
+    m++;
+    s = 0;
+  }
+  if (m == 60) {
+    d++;
+    m = 0;
+  }
+
+  let dms = {
+    dir: deg < 0 ? (lng ? "W" : "S") : lng ? "E" : "N",
+    deg: d,
+    min: m,
+    sec: s.toFixed(0),
+  };
+  return `${dms.deg}\u00B0${dms.min}'${dms.sec}"${dms.dir}`;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import styles from "./index.module.css";
 import client, { allItems } from "../state/graph";
@@ -9,6 +9,7 @@ import ConnectButton from "../components/buttons/connect/ConnectButton";
 import MiniView from "../components/mini/MiniView";
 import Modal from "../components/modal/Modal";
 import NoSSR from "../components/utils/NoSSR";
+import IndexMiniView from "../components/mini/IndexMiniView";
 
 interface Props {
   isMobileView?: boolean;
@@ -17,6 +18,12 @@ interface Props {
 const Home: NextPage<Props> = ({ isMobileView }) => {
   const { setMobileView, items, setItems, isModalOpen, toggleModal } =
     useApplicationContext();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     setMobileView(isMobileView);
@@ -44,7 +51,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
   return (
     <>
       <NoSSR>
-        <video autoPlay muted loop className={styles.video}>
+        <video autoPlay playsInline muted loop className={styles.video}>
           <source src="/videos/back.mp4" />
         </video>
         {isMobileView ? (
@@ -62,10 +69,26 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
               </div>
             </div>
             <div className={styles.pieceViewer}>
-              <button className={styles.viewPieces}>
+              <button className={styles.viewPieces} onClick={handleToggle}>
                 {" "}
                 VIEW PIECES <img src="/images/dropDown.png" />
               </button>
+            </div>
+            <div
+              className={styles.pieces}
+              style={
+                isOpen
+                  ? { height: "810px" }
+                  : { height: "0px" }
+              }
+            >
+              <div className={styles.topBorder} />
+              {items.map((item) => {
+                if (item.token?.tokenId == "0") {
+                  return <IndexMiniView key={item.id} item={item} />;
+                }
+              })}
+              <div className={styles.bottomBorder} />
             </div>
             <div className={styles.links}>
               <div className={styles.linkBox}>

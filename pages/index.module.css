@@ -55,9 +55,27 @@
 .pieceViewer {
   height: 80px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.pieces {
+  background-color: black;
+  width: 100%;
+  overflow: hidden;
+  transition: height ease 2s;
+}
+
+.topBorder {
+  margin-top: 30px;
+  border-top: var(--line);
+}
+
+.bottomBorder {
+  height: 30px;
+  width: 100%;
+  display: block;
 }
 
 .viewPieces {

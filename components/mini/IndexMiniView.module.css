@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+    border-bottom: var(--line);
+    margin-top: -1px;
+}
+
+.piece {
+    width: 25%;
+    height: 100%;
+    background-image: url("/images/pieceMiniBackgroundMoblie.svg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .piece img {
+    height: 90%;
+  }
+
+  .locationTimer {
+    width: 25%;
+  }
+
+  .nameTitlePrice {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: "HelveticaNeue-Extended";
+    padding-left: 20px;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+  
+  .title {
+    padding-top: 5px;
+    font-size: 12px;
+    color: grey;
+  }
+
+  .price {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+
+  .location {
+    color: #42FF60;
+    font-size: 13px;
+    font-family: "HelveticaNeue-Extended";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .location img {
+    padding-right: 3px;
+  }
+
+  .timer {
+    color: grey;
+    font-size: 13px;
+    font-family: "HelveticaNeue-Extended";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5px;
+  }
+  .timer img {
+    padding-right: 3px;
+  }

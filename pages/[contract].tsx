@@ -66,7 +66,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
             </div>
           ) : (
             <>
-              <video autoPlay muted loop className={styles.video}>
+              <video autoPlay playsInline muted loop className={styles.video}>
                 <source src="/videos/back.mp4" />
               </video>
               <div className={styles.desktopContainer}>
