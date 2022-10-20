@@ -78,7 +78,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
               className={styles.pieces}
               style={
                 isOpen
-                  ? { height: "810px" }
+                  ? { height: "560px" }
                   : { height: "0px" }
               }
             >
@@ -111,14 +111,14 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                 </div>
                 <div className={styles.bottomLinks}>
                   <div className={styles.getApp}>
-                    <img src="/images/getAppSmall.png" />
+                    <img src="/images/getAppSmall.svg" />
                   </div>
                   <div className={styles.download}>
                     <p>IOS / ANDROID SOON</p>
                     <button className={styles.downloadButton}>
-                      <img src="/images/download.png" />
+                      <img src="/images/download.svg" />
                     </button>
-                    <img src="/images/mirageLogo.png" className={styles.logo} />
+                    <img src="/images/mirageLogo.svg" className={styles.logo} />
                   </div>
                 </div>
               </div>

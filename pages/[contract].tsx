@@ -78,7 +78,6 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
                       DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
                     </p>
                   </div>
-
                   <div className={styles.connected}>
                     <ConnectButton isLarge />
                   </div>

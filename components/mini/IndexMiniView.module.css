@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    height: 150px;
+    height: 100px;
     width: 100%;
     padding: 10px;
     border-bottom: var(--line);
@@ -9,8 +9,8 @@
 }
 
 .piece {
-    width: 25%;
-    height: 100%;
+    width: 61px;
+    height: 76px;
     background-image: url("/images/pieceMiniBackgroundMoblie.svg");
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
   }
 
   .piece img {
-    height: 90%;
+    height: 80%;
   }
 
   .locationTimer {
@@ -27,7 +27,7 @@
   }
 
   .nameTitlePrice {
-    width: 50%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     color: white;
@@ -36,23 +36,23 @@
   }
 
   .name {
-    font-size: 15px;
+    font-size: 11px;
   }
   
   .title {
     padding-top: 5px;
-    font-size: 12px;
+    font-size: 11px;
     color: grey;
   }
 
   .price {
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .location {
     color: #42FF60;
-    font-size: 13px;
+    font-size: 11px;
     font-family: "HelveticaNeue-Extended";
     display: flex;
     flex-direction: row;
@@ -65,7 +65,7 @@
 
   .timer {
     color: grey;
-    font-size: 13px;
+    font-size: 11px;
     font-family: "HelveticaNeue-Extended";
     display: flex;
     flex-direction: row;
