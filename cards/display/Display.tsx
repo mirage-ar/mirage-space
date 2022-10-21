@@ -59,7 +59,7 @@ const Display: React.FC = () => {
             <div className={styles.address}>
               <p className={styles.addressTitle}>CONTRACT ADDRESS</p>
               <p className={styles.addressLink}>
-                {formatAddress(contract)} <img src="/images/navigate.svg" />
+                {formatAddress(contract)}
               </p>
             </div>
           </div>

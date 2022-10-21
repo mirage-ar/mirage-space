@@ -26,7 +26,7 @@ const Rsvp: NextPage = () => {
               <p>SOMEWHERE BETWEEN CODE AND CONCRETE IS A CANVAS.</p>
               <p>ON TUESDAY, OCTOBER 25, 2022, PROSPECT PARK,</p>
               <p>THAT CANVAS WILL BE ACTIVATED,</p>
-              <p>AND YOU'RE INVITED.</p>
+              <p>AND YOU&#39;RE INVITED.</p>
             </p>
           </div>
           <div className={styles.bottomText}>
