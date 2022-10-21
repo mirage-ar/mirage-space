@@ -20,9 +20,9 @@ interface MiniProps {
 const IndexMiniView: React.FC<MiniProps> = ({ item }) => {
   const router = useRouter();
   const { contract, items, defaultItem } = useApplicationContext();
-  const mirage =
-    items.find((item) => isSameAddress(item.token.contractAddress, contract)) ||
-    defaultItem;
+  // const mirage =
+  //   items.find((item) => isSameAddress(item.token.contractAddress, contract)) ||
+  //   defaultItem;
 
   const navigateToItem = (item: Mirage) => {
     router.replace(`/${contract}`, `/${item.token.contractAddress}`);
@@ -36,7 +36,7 @@ const IndexMiniView: React.FC<MiniProps> = ({ item }) => {
       <div className={styles.nameTitlePrice}>
         <div className={styles.name}>{item.name.toUpperCase()}</div>
         <div className={styles.title}>@ {item.artist.handle.toUpperCase()}</div>
-        <div className={styles.price}>{item.token.mintPrice} ETH</div>
+        {/* <div className={styles.price}>{item.token.mintPrice} ETH</div> */}
       </div>
       <div className={styles.locationTimer}>
         <div className={styles.location}>

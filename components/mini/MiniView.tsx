@@ -49,7 +49,7 @@ const MobileMini: React.FC<MiniProps> = ({ item }) => {
             />
           </p>
         </div>
-        {!isMobileView && <div className={styles.price}>{item.token.mintPrice} ETH</div>}
+        {/* {!isMobileView && <div className={styles.price}>{item.token.mintPrice} ETH</div>} */}
       </div>
     </div>
   );
