@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The Modal Content That Shows on Successful Connection of Wallet 
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { useAccount, useDisconnect } from "wagmi";
 import { useApplicationContext } from "../../state/context";

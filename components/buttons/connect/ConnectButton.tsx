@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The button for connecting your wallet
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { useAccount } from "wagmi";
 import { useApplicationContext } from "../../../state/context";

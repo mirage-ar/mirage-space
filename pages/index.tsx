@@ -1,15 +1,21 @@
+/**----------------------------------------------------------------------------------
+ * Mirage Home Page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import styles from "./index.module.css";
 import client, { allItems } from "../state/graph";
 
 import { useApplicationContext } from "../state/context";
-import { isSameAddress } from "../components/utils/functions";
-import ConnectButton from "../components/buttons/connect/ConnectButton";
 import MiniView from "../components/mini/MiniView";
 import Modal from "../components/modal/Modal";
 import NoSSR from "../components/utils/NoSSR";
 import IndexMiniView from "../components/mini/IndexMiniView";
+import Link from "next/link";
+import ConnectButton from "../components/buttons/connect/ConnectButton";
 
 interface Props {
   isMobileView?: boolean;
@@ -76,11 +82,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
             </div>
             <div
               className={styles.pieces}
-              style={
-                isOpen
-                  ? { height: "560px" }
-                  : { height: "0px" }
-              }
+              style={isOpen ? { height: "560px" } : { height: "0px" }}
             >
               <div className={styles.topBorder} />
               {items.map((item) => {
@@ -95,10 +97,12 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                 <div className={styles.topLinks}>
                   <img src="/images/MIRAGE.svg" />
                   <div className={styles.socials}>
-                    <button className={styles.socialLink}>
-                      TWITTER <img src="/images/navigate.svg" />
-                    </button>
-                    <button className={styles.socialLink}>
+                    <Link href={"https://twitter.com/thismirage"}>
+                      <button className={styles.socialLink}>
+                        TWITTER <img src="/images/navigate.svg" />
+                      </button>
+                    </Link>
+                    {/* <button className={styles.socialLink}>
                       TELEGRAM <img src="/images/navigate.svg" />
                     </button>
                     <button className={styles.socialLink}>
@@ -106,12 +110,12 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                     </button>
                     <button className={styles.socialLink}>
                       INSTAGRAM <img src="/images/navigate.svg" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 <div className={styles.bottomLinks}>
                   <div className={styles.getApp}>
-                    <img src="/images/getAppSmall.svg" />
+                    <img src="/images/Get app.svg" />
                   </div>
                   <div className={styles.download}>
                     <p>IOS / ANDROID SOON</p>
@@ -160,10 +164,12 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                         <p>FOLLOW US</p>
                       </div>
                       <div className={styles.dtSocials}>
-                        <button className={styles.dtSocialLink}>
-                          TWITTER <img src="/images/navigate.svg" />
-                        </button>
-                        <button className={styles.dtSocialLink}>
+                        <Link href={"https://twitter.com/thismirage"} >
+                          <button className={styles.dtSocialLink}>
+                            TWITTER <img src="/images/navigate.svg" />
+                          </button>
+                        </Link>
+                        {/* <button className={styles.dtSocialLink}>
                           TELEGRAM <img src="/images/navigate.svg" />
                         </button>
                         <button className={styles.dtSocialLink}>
@@ -171,21 +177,21 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                         </button>
                         <button className={styles.dtSocialLink}>
                           INSTAGRAM <img src="/images/navigate.svg" />
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>
                   <div className={styles.dtBottomLinks}>
                     <div className={styles.dtGetApp}>
-                      <img src="/images/getAppLarge.png" />
+                      <img src="/images/Get app.svg" />
                     </div>
                     <div className={styles.dtDownload}>
                       <p>IOS / ANDROID SOON</p>
                       <button className={styles.dtDownloadButton}>
-                        <img src="/images/download.png" />
+                        <img src="/images/download.svg" />
                       </button>
                       <img
-                        src="/images/mirageLogo.png"
+                        src="/images/mirageLogo.svg"
                         className={styles.dtLogo}
                       />
                     </div>

@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Loading Icon for Mint process
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import styles from "./Loading.module.css";
 

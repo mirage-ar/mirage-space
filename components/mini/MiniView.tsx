@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * A Side Scrolling Viewer for Models
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { useApplicationContext } from "../../state/context";
 import { Mirage } from "../../state/types";

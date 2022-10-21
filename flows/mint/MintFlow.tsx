@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The Modal for Successful Mint
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import Address from "../../components/utils/Address";
 import { useApplicationContext } from "../../state/context";

@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The Modal Content For Connecting a Wallet
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React, { useState, useEffect } from "react";
 import { useConnect, useAccount } from "wagmi";
 import styles from "./ConnectFlow.module.css";

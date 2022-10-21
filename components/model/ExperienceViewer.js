@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Full Size 3D models used for secondary markets
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import "@google/model-viewer";
 
 const ExperienceViewer = ({ contractAddress }) => {

@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Mirage Friends and Family Drop Rsvp Page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { NextPage } from "next";
 
@@ -47,7 +53,7 @@ const Rsvp: NextPage = () => {
         </div>
         <div className={styles.bottomTitle}>
           <p className={styles.bottomTitle}>MIRAGE IS DROPPING SOON</p>
-          <Link href={"https://beta.mirage.space/about"}>
+          <Link href={"/about"}>
             <button className={styles.bottomButton}> MORE ABOUT MIRAGE</button>
           </Link>
         </div>

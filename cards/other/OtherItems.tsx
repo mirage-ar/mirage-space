@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * A card for viewing other pieces from a contract page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 /* eslint-disable react/jsx-key */
 import React from "react";
 import styles from "./OtherItems.module.css";

@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The description card for the contract page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import styles from "./Description.module.css";
 

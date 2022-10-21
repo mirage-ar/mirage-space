@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The App Page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import { WagmiConfig, configureChains, chain, createClient } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";

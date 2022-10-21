@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The Display card for the contract page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { useApplicationContext } from "../../state/context";
 import { formatAddress, isSameAddress } from "../../components/utils/functions";

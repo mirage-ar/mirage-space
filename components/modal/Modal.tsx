@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The Main Modal for wallet connecting and minting
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { useWaitForTransaction, useAccount, useDisconnect } from "wagmi";
 import ConnectFlow from "../../flows/connect/ConnectFlow";

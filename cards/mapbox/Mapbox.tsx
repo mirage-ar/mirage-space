@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * The mapbox setup for viewing piece locations
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 /* eslint-disable react/no-unescaped-entities */
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax

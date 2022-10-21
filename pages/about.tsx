@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Mirage Information Page
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React from "react";
 import { NextPage } from "next";
 
@@ -15,7 +21,7 @@ const About: NextPage = () => {
             </div>
             <div className={styles.topBarRight}>
                 <p> CLOSE</p>
-                <Link href={"https://beta.mirage.space/rsvp"}>
+                <Link href={"/rsvp"}>
                     <button className={styles.close}> <img src="./images/icon 24.png"/> </button>
                 </Link>
             </div>

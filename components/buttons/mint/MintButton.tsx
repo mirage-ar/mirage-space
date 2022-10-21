@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Conditionally rendering button for Mint flow
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React, { useEffect, useState } from "react";
 import { useApplicationContext } from "../../../state/context";
 import {

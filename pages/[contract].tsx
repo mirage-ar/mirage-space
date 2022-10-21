@@ -1,3 +1,9 @@
+/**----------------------------------------------------------------------------------
+ * Mirage Contract Page for Loading NFT's
+ * Mirage (( v1.0 ))
+ * @author max <max@mirage.space> | October 21, 2022 | Updated:
+ * ----------------------------------------------------------------------------------*/
+
 import React, { useEffect } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -14,6 +20,7 @@ import NoSSR from "../components/utils/NoSSR";
 import { SnackbarProvider } from "material-ui-snackbar-provider";
 
 import { useApplicationContext } from "../state/context";
+import Link from "next/link";
 
 interface Props {
   items?: Array<Mirage>;
@@ -73,7 +80,11 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
                 <Modal isOpen={isModalOpen} onClose={toggleModal} />
                 <div className={styles.title}>
                   <div className={styles.titleLeft}>
-                    <img src="/images/logo.svg" className={styles.titleImage} />
+                    <Link href={"/"}>
+                      <button className={styles.homepageLink}>
+                        <img src="/images/logo.svg" className={styles.titleImage} />
+                      </button>
+                    </Link>
                     <p className={styles.titleText}>
                       DISCOVER BOUNDLESS CREATION BETWEEN CODE AND CONCRETE
                     </p>
