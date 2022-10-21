@@ -84,7 +84,7 @@ const Mapbox: React.FC = () => {
           styles[isMobileView ? "buttonContainerMobile" : "buttonContainer"]
         }
       >
-        <div className={styles.navigate}>
+        <div className={styles[isMobileView ? "navigate" : "navigateDesktop"]}>
           <a
             href={`${isMobileView ? `mirage://navigate:${contract}` : "#"}`}
             className={
@@ -94,7 +94,7 @@ const Mapbox: React.FC = () => {
             }
           >
             <p>NAVIGATE IN APP</p>
-            <img src="/images/hexSquareThing.svg" />
+            <img src="/images/navigate.png" />
           </a>
         </div>
         <div className={styles.position}>

@@ -119,9 +119,11 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                   </div>
                   <div className={styles.download}>
                     <p>IOS / ANDROID SOON</p>
-                    <button className={styles.downloadButton}>
-                      <img src="/images/download.svg" />
-                    </button>
+                    <Link href={"https://testflight.apple.com/join/SodgdzA0"}>
+                      <button className={styles.downloadButton}>
+                        <img src="/images/download.svg" />
+                      </button>
+                    </Link>
                     <img src="/images/mirageLogo.svg" className={styles.logo} />
                   </div>
                 </div>
@@ -187,9 +189,11 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                     </div>
                     <div className={styles.dtDownload}>
                       <p>IOS / ANDROID SOON</p>
-                      <button className={styles.dtDownloadButton}>
-                        <img src="/images/download.svg" />
-                      </button>
+                      <Link href={"https://testflight.apple.com/join/SodgdzA0"}>
+                        <button className={styles.dtDownloadButton}>
+                          <img src="/images/download.svg" />
+                        </button>
+                      </Link>
                       <img
                         src="/images/mirageLogo.svg"
                         className={styles.dtLogo}

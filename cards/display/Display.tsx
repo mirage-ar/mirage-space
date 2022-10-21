@@ -44,10 +44,10 @@ const Display: React.FC = () => {
               <p className={styles.nameTitle}>{mirage.name.toUpperCase()}</p>
               <p>BY {mirage.artist.handle.toUpperCase()}</p>
             </div>
-            <div className={styles.price}>
+            {/* <div className={styles.price}>
               <p className={styles.priceTitle}>PRICE</p>
               <p>{mirage.token.mintPrice} ETH</p>
-            </div>
+            </div> */}
             <div className={styles.timer}>
               <p className={styles.timerTitle}>
                 TIMER <img src="/images/live.svg" />
@@ -79,10 +79,10 @@ const Display: React.FC = () => {
               <p className={styles.desktopLeftText}>ARTIST</p>
               <p>{mirage.artist.handle.toUpperCase()}</p>
             </div>
-            <div className={styles.desktopInfo}>
+            {/* <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>PRICE</p>
               <p>{mirage.token.mintPrice} ETH</p>
-            </div>
+            </div> */}
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>TIMER</p>
               {/* TODO: Desktop timer needs to be made to work */}

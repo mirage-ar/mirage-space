@@ -15,9 +15,7 @@
   z-index: 1;
   margin-top: 190px;
   width: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  margin-left: 220px;
 }
 
 .buttonContainerMobile {
@@ -39,7 +37,7 @@
 }
 
 /* classes can share the same content */
-.position, .navigate { 
+.position { 
   color: white;
   width: 45%;
   height: 32px;
@@ -51,7 +49,7 @@
   justify-content: center;
 }
 
-.positionContent, .navigateContent {
+.positionContent {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -64,11 +62,49 @@
   color: white;
 }
 
+.navigateContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+
+  border: none;
+  background: none;
+  cursor: crosshair;
+  color: white;
+}
+
+.navigateContent img {
+  width: 13px;
+}
+
+.navigateContent {
+  width: 125px;
+  text-align: center;
+}
+
+.navigateDesktop {
+  display: none;
+}
+
+.navigate { 
+  color: white;
+  width: 45%;
+  height: 32px;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .positionContent img {
   padding-left: 3px;
 }
 
-.navigateContentDisabled {
+/* .navigateContentDisabled {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -78,10 +114,10 @@
   border: none;
   background: none;
   cursor: default;
-}
+} */
 
-.positionContent, .navigateContent p {
-  width: 155px;
+.positionContent p {
+  width: 135px;
   text-align: center;
 }
 

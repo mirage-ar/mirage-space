@@ -24,6 +24,7 @@
 }
 
 .pieceName {
+  height: 35px;
   font-size: 10px;
   color: white;
   padding-top: 2px;
@@ -96,6 +97,7 @@
 }
 
 .desktopPieceName {
+  height: 60px;
   font-size: 13px;
   color: white;
   padding-top: 14px;
