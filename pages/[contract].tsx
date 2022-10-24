@@ -65,7 +65,14 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
           {isMobileView ? (
             <div className={styles.mobileContainer}>
               <Modal isOpen={isModalOpen} onClose={toggleModal} />
-              <ConnectButton isLarge />
+              <div className={styles.mobileTopBar}>
+                <Link href={"/"}>
+                  <button className={styles.mobileHomeButton}>
+                    <img src="/images/M.png" />
+                  </button>
+                </Link>
+                <ConnectButton isLarge />
+              </div>
               <Display />
               <Mapbox />
               <Description />
@@ -82,7 +89,10 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
                   <div className={styles.titleLeft}>
                     <Link href={"/"}>
                       <button className={styles.homepageLink}>
-                        <img src="/images/logo.svg" className={styles.titleImage} />
+                        <img
+                          src="/images/logo.svg"
+                          className={styles.titleImage}
+                        />
                       </button>
                     </Link>
                     <p className={styles.titleText}>

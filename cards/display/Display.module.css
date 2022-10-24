@@ -140,7 +140,7 @@
   width: 93%;
   max-width: 1440px;
   min-width: 800px;
-  height: 900px;
+  height: 814px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -149,7 +149,7 @@
 
 .desktopLeftContent {
   width: 430px;
-  height: 815px;
+  height: 750px;
   background-color: black;
   display: flex;
   flex-direction: column;

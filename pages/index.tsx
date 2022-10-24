@@ -124,7 +124,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                         <img src="/images/download.svg" />
                       </button>
                     </Link>
-                    <img src="/images/mirageLogo.svg" className={styles.logo} />
+                    <img src="/images/MirageLogo.svg" className={styles.logo} />
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                         </button>
                       </Link>
                       <img
-                        src="/images/mirageLogo.svg"
+                        src="/images/MirageLogo.svg"
                         className={styles.dtLogo}
                       />
                     </div>
