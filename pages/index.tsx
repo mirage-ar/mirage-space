@@ -68,11 +68,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
               <ConnectButton />
             </div>
             <div className={styles.introGraphic}>
-              <img src="/images/Friends.png" />
-              <div className={styles.codeConcrete}>
-                <p>DISCOVER BOUNDLESS CREATION BETWEEN</p>
-                <p>CODE AND CONCRETE</p>
-              </div>
+              <img src="/gifs/codeAndConcreteGif.gif" />
             </div>
             <div className={styles.pieceViewer}>
               <button className={styles.viewPieces} onClick={handleToggle}>
@@ -141,11 +137,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
               <ConnectButton />
             </div>
             <div className={styles.dtIntroGraphic}>
-              <img src="/images/Friends.png" />
-              <div className={styles.dtCodeConcrete}>
-                <p>DISCOVER BOUNDLESS CREATION BETWEEN</p>
-                <p>CODE AND CONCRETE</p>
-              </div>
+              <img src="/gifs/codeAndConcreteGif.gif" />
             </div>
             <div className={styles.dtPieceViewer}>
               <div className={styles.dtMiniViews}>

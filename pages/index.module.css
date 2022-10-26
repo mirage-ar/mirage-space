@@ -16,7 +16,7 @@
 }
 
 .logo {
-  width: 70px;
+  width: 55px;
 }
 
 .topBar {
@@ -29,7 +29,7 @@
 }
 
 .introGraphic {
-  height: 400px;
+  /* height: 400px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,23 +37,7 @@
 }
 
 .introGraphic img {
-  width: 75%;
-  height: 150px;
-}
-
-.codeConcrete {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.codeConcrete p {
-  color: white;
-  margin: 0px;
-  font-size: 12px;
-  font-family: "Helvetica-Monospaced";
+  width: 100%;
 }
 
 .pieceViewer {
@@ -220,23 +204,8 @@
 }
 
 .dtIntroGraphic img {
-  width: 500px;
-  height: 300px;
-}
-
-.dtCodeConcrete {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.dtCodeConcrete p {
-  color: white;
-  margin: 0px;
-  font-size: 12px;
-  font-family: "Helvetica-Monospaced";
+  width: 1000px;
+  height: 500px;
 }
 
 .dtPieceViewer {
