@@ -141,7 +141,7 @@ const MintButton: React.FC = () => {
 
   return (
     <div className={styles.mintContainer}>
-      <div className={styles.cta}>Connect wallet to mint...</div>
+      <div className={styles.cta}>Mint - enabled soon</div>
       <button className={styles.click} onClick={toggleModal}>
         CONNECT WALLET
       </button>
