@@ -109,7 +109,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                     </button> */}
                   </div>
                 </div>
-                <div className={styles.bottomLinks}>
+                {/* <div className={styles.bottomLinks}>
                   <div className={styles.getApp}>
                     <img src="/images/Get app.svg" />
                   </div>
@@ -122,7 +122,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                     </Link>
                     <img src="/images/MirageLogo.svg" className={styles.logo} />
                   </div>
-                </div>
+                </div> */}
               </div>
               <p className={styles.copyright}>
                 Copyright @ mirage. All rights reserved 2022.
@@ -175,7 +175,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.dtBottomLinks}>
+                  {/* <div className={styles.dtBottomLinks}>
                     <div className={styles.dtGetApp}>
                       <img src="/images/Get app.svg" />
                     </div>
@@ -191,7 +191,7 @@ const Home: NextPage<Props> = ({ isMobileView }) => {
                         className={styles.dtLogo}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <p className={styles.dtCopyright}>
                   Copyright @ mirage. All rights reserved 2022.
