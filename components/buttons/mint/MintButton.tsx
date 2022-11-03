@@ -132,7 +132,7 @@ const MintButton: React.FC = () => {
     return (
       <>
         <div className={styles.mintContainer}>
-          <div className={styles.cta}>Mint - Enabled Soon</div>
+          <div className={styles.cta}>SOLD OUT</div>
           <button className={styles.noClick}>MINT</button>
         </div>
       </>
@@ -141,7 +141,7 @@ const MintButton: React.FC = () => {
 
   return (
     <div className={styles.mintContainer}>
-      <div className={styles.cta}>Mint - enabled soon</div>
+      <div className={styles.cta}>SOLD OUT</div>
       <button className={styles.click} onClick={toggleModal}>
         CONNECT WALLET
       </button>
