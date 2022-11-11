@@ -56,12 +56,12 @@ const Display: React.FC = () => {
                 <Timer start={mirage.dropStart} end={mirage.dropEnd} />
               </p>
             </div>
-            <div className={styles.address}>
+            {/* <div className={styles.address}>
               <p className={styles.addressTitle}>CONTRACT ADDRESS</p>
               <p className={styles.addressLink}>
                 {formatAddress(contract)}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (
@@ -88,10 +88,10 @@ const Display: React.FC = () => {
               {/* TODO: Desktop timer needs to be made to work */}
               <Timer start={mirage.dropStart} end={mirage.dropEnd} />
             </div>
-            <div className={styles.desktopInfo}>
+            {/* <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>CONTRACT ADDRESS</p>
               <p>{formatAddress(contract)}</p>
-            </div>
+            </div> */}
             <Mapbox />
             <Description />
           </div>
