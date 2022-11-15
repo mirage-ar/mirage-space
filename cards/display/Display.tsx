@@ -42,7 +42,7 @@ const Display: React.FC = () => {
           <div className={styles.bottomHalf}>
             <div className={styles.name}>
               <p className={styles.nameTitle}>{mirage.name.toUpperCase()}</p>
-              <p>BY {mirage.artist.handle.toUpperCase()}</p>
+              <p className={styles.artistName}>BY @{mirage.artist.handle.toUpperCase()}</p>
             </div>
             {/* <div className={styles.price}>
               <p className={styles.priceTitle}>PRICE</p>
@@ -50,7 +50,8 @@ const Display: React.FC = () => {
             </div> */}
             <div className={styles.timer}>
               <p className={styles.timerTitle}>
-                TIMER <img src="/images/live.svg" />
+                TIMER{" "}
+                <img style={{ paddingLeft: "4px" }} src="/images/live.svg" />
               </p>
               <p>
                 <Timer start={mirage.dropStart} end={mirage.dropEnd} />
@@ -67,10 +68,7 @@ const Display: React.FC = () => {
       ) : (
         <div className={styles.desktopContainer}>
           <div className={styles.desktopLeftContent}>
-            <img
-              src="./images/pieceInfo.svg"
-              className={styles.desktopDisplayTitle}
-            />
+            <div className={styles.desktopDisplayTitle}>Piece Info</div>
             <div className={styles.desktopInfo}>
               <p className={styles.desktopLeftText}>PIECE NAME</p>
               <p>{mirage.name.toUpperCase()}</p>
@@ -93,7 +91,7 @@ const Display: React.FC = () => {
               <p>{formatAddress(contract)}</p>
             </div> */}
             <Mapbox />
-            <Description />
+            <Description item={mirage} />
           </div>
           <div className={styles.desktopRightContent}>
             <div className={styles.desktopPiece}>

@@ -4,7 +4,7 @@
  * @author max <max@mirage.space> | October 21, 2022 | Updated:
  * ----------------------------------------------------------------------------------*/
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import client, { allItems } from "../state/graph";
@@ -21,6 +21,7 @@ import { SnackbarProvider } from "material-ui-snackbar-provider";
 
 import { useApplicationContext } from "../state/context";
 import Link from "next/link";
+import { isSameAddress } from "../components/utils/functions";
 
 interface Props {
   items?: Array<Mirage>;
@@ -32,6 +33,8 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
   const { contract } = router.query;
   const { isModalOpen, toggleModal, setMobileView, setItems, setContract } =
     useApplicationContext();
+
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
     setMobileView(isMobileView);
@@ -47,6 +50,14 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
       console.log(data);
 
       setItems(data ? data.items : []);
+
+      if (data && contract) {
+        setItem(
+          data.items.find((item) =>
+            isSameAddress(item.token.contractAddress, contract as string)
+          )
+        );
+      }
     };
 
     loadData();
@@ -75,7 +86,7 @@ const Home: NextPage<Props> = ({ isMobileView, items }) => {
               </div>
               <Display />
               <Mapbox />
-              <Description />
+              <Description item={item} />
               <OtherItems />
             </div>
           ) : (
